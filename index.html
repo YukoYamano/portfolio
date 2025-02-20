@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuko Yamano | Frontend Developer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <nav>
+            <h1>Yuko Yamano</h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section id="hero">
+        <h2>Hi, I'm Yuko Yamano</h2>
+        <p>Frontend Developer | Software Tester</p>
+        <a href="#projects" class="cta-btn">View My Work</a>
+    </section>
+
+    <!-- 自己紹介 -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a frontend developer passionate about creating intuitive user experiences and efficient code.</p>
+    </section>
+
+    <!-- スキルセット -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">React</div>
+            <div class="skill-card">Bootstrap</div>
+            <div class="skill-card">C#</div>
+            <div class="skill-card">Java</div>
+        </div>
+    </section>
+
+    <!-- プロジェクト -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Navi Grade</h3>
+                <p>Grade management app built using the MERN stack.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Goal Tracker App</h3>
+                <p>Track your goals and milestones effortlessly.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- レジュメ -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Download my resume below:</p>
+        <a href="resume.pdf" download class="cta-btn">Download Resume</a>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; <span id="year"></span> Yuko Yamano. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
