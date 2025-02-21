@@ -116,45 +116,69 @@ section {
 #hero {
     background: linear-gradient(135deg, #906ce4, #28d9e6);
     color: white;
-    padding: 150px 20px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
+/* ヒーローカード */
+.hero-card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.hero-card h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.hero-card p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* ボタンとアイコン */
 .hero-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 20px;
-}
-
-.cta-btn, .linkedin-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+    flex-wrap: wrap;
 }
 
 .cta-btn {
     background-color: #09186b;
-    color:white;
-    
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .cta-btn:hover {
     background-color: #1f2b6b;
-    color:  #FFC107;
+    color: #FFC107;
 }
 
-.linkedin-btn {
-    background-color: #0077b5;
-    color: white;
-    font-size: 1.2rem;
+.linkedin-btn img,
+.github-btn img {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
 }
 
-.linkedin-btn:hover {
-    background-color: #005582;
+.linkedin-btn img:hover,
+.github-btn img:hover {
+    transform: scale(1.1);
 }
 
 /* セクションの交互背景色 */
@@ -335,6 +359,18 @@ footer {
         display: flex;
         gap: 0.5rem;
         align-items: center;
+    }
+
+    .hero-card {
+        padding: 1.5rem;
+    }
+
+    .hero-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-card p {
+        font-size: 1rem;
     }
 }
 

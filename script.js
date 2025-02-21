@@ -1,3 +1,29 @@
+// スライドショー機能
+const slides = document.querySelectorAll('.slideshow img');
+let currentSlide = 0;
+
+// スライドを切り替える関数
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active'); // 全て非表示
+        if (i === index) {
+            slide.classList.add('active'); // 対象のスライドを表示
+        }
+    });
+}
+
+// 自動スライド機能
+function startSlideshow() {
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length; // 次のスライドへ
+        showSlide(currentSlide);
+    }, 5000); // 5秒ごとに切り替え
+}
+
+// ページロード時にスライドショーを開始
+window.addEventListener('DOMContentLoaded', startSlideshow);
+
+
 
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
