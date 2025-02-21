@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #0c032e;
     color: white;
     padding: 1rem 2rem;
     position: fixed;
@@ -44,20 +44,7 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* アニメーションの基本設定 */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* セクションの共通設定 */
+/* セクション設定 */
 section {
     padding: 100px 20px;
     text-align: center;
@@ -65,24 +52,49 @@ section {
 
 /* ヒーローセクション */
 #hero {
-    background: linear-gradient(135deg, #4CAF50, #FFC107);
+    background: linear-gradient(135deg, #906ce4, #28d9e6);
     color: white;
     padding: 150px 20px;
 }
 
-.cta-btn {
-    background-color: #FFC107;
-    color: #333;
-    padding: 10px 20px;
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.cta-btn, .linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-btn {
+    background-color: #09186b;
+    color: #333;
+    color: white;
 }
 
 .cta-btn:hover {
-    background-color: #ffb300;
+    background-color: #1f2b6b;
 }
 
-/* セクションごとの背景色 */
+.linkedin-btn {
+    background-color: #0077b5;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.linkedin-btn:hover {
+    background-color: #005582;
+}
+
+/* セクションの交互背景色 */
 #about {
     background-color: #ffffff;
 }
@@ -95,12 +107,8 @@ section {
     background-color: #ffffff;
 }
 
-#resume {
-    background-color: #eaeaea;
-}
-
 #contact {
-    background-color: #ffffff;
+    background-color: #eaeaea;
 }
 
 /* スキル・プロジェクトのカード */
@@ -122,9 +130,70 @@ section {
 
 .skill-card:hover, .project-card:hover {
     transform: translateY(-5px);
-    transition: 0.3s;
-    transform: translateY(-5px);
 }
+
+/* モーダルの背景 */
+.modal {
+    display: none; /* 初期は非表示 */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* 背景を暗く */
+}
+
+/* モーダルのコンテンツ */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+/* 閉じるボタン */
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* モーダル内の画像 */
+#modal-image {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* モーダルのリンクボタン */
+#modal-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#modal-link:hover {
+    background-color: #45a049;
+}
+
+
 
 /* お問い合わせフォーム */
 #contact-form {
@@ -142,7 +211,7 @@ section {
 }
 
 #contact-form button {
-    background-color: #4CAF50;
+    background-color: #09186b;
     color: white;
     border: none;
     padding: 10px;
@@ -150,12 +219,12 @@ section {
 }
 
 #contact-form button:hover {
-    background-color: #45a049;
+    background-color: #1f2b6b;
 }
 
 /* フッター */
 footer {
-    background-color: #4CAF50;
+    background-color: #0c032e;
     color: white;
     text-align: center;
     padding: 10px 0;
