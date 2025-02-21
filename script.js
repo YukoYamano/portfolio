@@ -54,14 +54,14 @@ const projectDetails = {
     "navi-grade": {
         title: "Navi Grade",
         description: "A grade management app built with the MERN stack. Features include real-time updates and intuitive UI.",
-        image: "img/navi-grade.png", 
-        link: "https://k.com/navi-grade"
+        image: "img/navi-grade.png",      //TODO
+        link: "https://k.com/navi-grade" //TODO
     },
     "goal-tracker": {
         title: "Goal Tracker App",
         description: "An app to track goals and milestones, helping users stay productive and on schedule.",
-        image: "img/goal-tracker.png",
-        link: "https://.com/goal-tracker"
+        image: "img/goal-tracker.png",      //TODO
+        link: "https://.com/goal-tracker"   //TODO
     }
 };
 
@@ -91,3 +91,99 @@ window.addEventListener('click', (e) => {
         modal.style.display = 'none';
     }
 });
+
+
+// ハンバーガーメニューの開閉制御
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// メニューリンクをクリックしたらメニューを閉じる
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+
+// 言語切り替えボタンを取得
+const langJP = document.getElementById('lang-jp');
+const langEN = document.getElementById('lang-en');
+
+
+// 言語データ
+const translations = {
+    en: {
+        "nav-home": "Home",
+        "nav-about": "About Me",
+        "nav-skills": "Skills",
+        "nav-projects": "Projects",
+        "nav-contact": "Contact",
+        "hero-title": "Hi, I'm Yuko Yamano",
+        "hero-subtitle": "Frontend Developer | Software Tester",
+        "view-work": "View My Work",
+        "about-title": "About Me",
+        "about-description": "I'm a frontend developer passionate about creating intuitive user experiences and efficient code.",
+        "skills-title": "Skills",
+        "projects-title": "Projects",
+        "navi-description": "Grade management app built using the MERN stack.",
+        "goal-description": "Track your goals and milestones effortlessly.",
+        "contact-title": "Contact",
+        "contact-name": "Your Name",
+        "contact-email": "Your Email",
+        "contact-message": "Your Message",
+        "contact-submit": "Send Message"
+    },
+    jp: {
+        "nav-home": "ホーム",
+        "nav-about": "自己紹介",
+        "nav-skills": "スキル",
+        "nav-projects": "プロジェクト",
+        "nav-contact": "お問い合わせ",
+        "hero-title": "山野優子",
+        "hero-subtitle": "フロントエンドエンジニア | ソフトウェアテスター",
+        "view-work": "作品を見る",
+        "about-title": "自己紹介",
+        "about-description": "直感的なユーザー体験と効率的なコード作成に情熱を持つフロントエンド開発者です。",
+        "skills-title": "スキル",
+        "projects-title": "プロジェクト",
+        "navi-description": "MERNスタックを使用した成績管理アプリ",
+        "goal-description": "目標とマイルストーンを簡単に追跡できるアプリ",
+        "contact-title": "お問い合わせ",
+        "contact-name": "お名前",
+        "contact-email": "メールアドレス",
+        "contact-message": "メッセージ",
+        "contact-submit": "送信"
+    }
+};
+
+
+function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-key]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = translations[lang][key];
+        } else if (el.tagName === 'BUTTON') {
+            el.textContent = translations[lang][key];
+        } else {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    // 言語設定をローカルストレージに保存
+    localStorage.setItem('site-language', lang);
+}
+
+// ページロード時に言語を反映
+window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('site-language') || 'en';
+    switchLanguage(savedLang);
+});
+
+// 言語切り替えボタンクリック
+langJP.addEventListener('click', () => switchLanguage('jp'));
+langEN.addEventListener('click', () => switchLanguage('en'));

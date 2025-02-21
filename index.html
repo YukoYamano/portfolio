@@ -7,43 +7,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+        <!-- ヘッダー -->
+        <header>
+            <nav>
+                <h1>Yuko Yamano</h1>
 
-    <!-- ヘッダー -->
-    <header>
-        <nav>
-            <h1>Yuko Yamano</h1>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+                <!-- ハンバーガーメニューアイコン -->
+                <div class="hamburger" id="hamburger">
+                    &#9776; 
+                </div>
 
-    <!-- ヒーローセクション -->
-    <section id="hero">
-        <h2>Hi, I'm Yuko Yamano</h2>
-        <p>Frontend Developer | Software Tester</p>
-        <div class="hero-buttons">
-            <a href="#projects" class="cta-btn">View My Work</a>
+                <!-- ナビゲーションメニュー -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#hero" data-key="nav-home">Home</a></li>
+                    <li><a href="#about" data-key="nav-about">About Me</a></li>
+                    <li><a href="#skills" data-key="nav-skills">Skills</a></li>
+                    <li><a href="#projects" data-key="nav-projects">Projects</a></li>
+                    <li><a href="#contact" data-key="nav-contact">Contact</a></li>
+                </ul>
 
-            <a href="https://www.linkedin.com/in/yukoyamano" target="_blank" class="linkedin-btn">
-                <img src="img/LinkedInlogo.png" alt="LinkedIn" width="50px" height="50px" >
-            </a>
-        </div>
+                <!-- 言語切り替えボタン -->
+                <div class="language-switch">
+                    <img src="img/japanSFlag.png" alt="日本語" id="lang-jp" class="flag-icon">
+                    <img src="img/canadaSFlag.png" alt="English" id="lang-en" class="flag-icon">
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- ヒーローセクション -->
+        <section id="hero">
+            <h2 id="hero-title" data-key="hero-title">Hi, I'm Yuko Yamano</h2>
+            <p id="hero-subtitle" data-key="hero-subtitle">Frontend Developer | Software Tester</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="cta-btn" data-key="view-work">View My Work</a>
+                <a href="https://www.linkedin.com/in/yukoyamano" target="_blank" class="linkedin-btn">
+                    <img src="img/LinkedInlogo.png" alt="LinkedIn" width="30" height="30">
+                </a>
+            </div>
+        </section>
+
+     <!-- 自己紹介 -->
+     <section id="about">
+        <h2 data-key="about-title">About Me</h2>
+        <p data-key="about-description">I'm a frontend developer passionate about creating intuitive user experiences and efficient code.</p>
     </section>
 
-    <!-- 自己紹介 -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a frontend developer passionate about creating intuitive user experiences and efficient code.</p>
-    </section>
 
     <!-- スキルセット -->
     <section id="skills">
-        <h2>Skills</h2>
+        <h2 data-key="skills-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">HTML</div>
             <div class="skill-card">CSS</div>
@@ -56,17 +69,15 @@
 
     <!-- プロジェクト -->
     <section id="projects">
-        <h2>Projects</h2>
+        <h2 data-key="projects-title">Projects</h2>
         <div class="project-grid">
-            <div class="project-card"  data-project="navi-grade">
+            <div class="project-card" data-project="navi-grade">
                 <h3>Navi Grade</h3>
-                <p>Grade management app built using the MERN stack.</p>
-                <a href="#" target="_blank">Detail</a>
+                <p data-key="navi-description">Grade management app built using the MERN stack.</p>
             </div>
             <div class="project-card" data-project="goal-tracker">
                 <h3>Goal Tracker App</h3>
-                <p>Track your goals and milestones effortlessly.</p>
-                <a href="#" target="_blank">Detail</a>
+                <p data-key="goal-description">Track your goals and milestones effortlessly.</p>
             </div>
         </div>
     </section>
@@ -83,14 +94,13 @@
     </div>
 
 
-    <!-- お問い合わせ -->
     <section id="contact">
-        <h2>Contact</h2>
+        <h2 data-key="contact-title">Contact</h2>
         <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <input type="text" placeholder="Your Name" required data-key="contact-name">
+            <input type="email" placeholder="Your Email" required data-key="contact-email">
+            <textarea placeholder="Your Message" required data-key="contact-message"></textarea>
+            <button type="submit" data-key="contact-submit">Send Message</button>
         </form>
     </section>
 
