@@ -182,48 +182,57 @@ section {
 
 
 /* タブメニューのスタイル */
+/* ====== タブメニューのスタイル ====== */
 .tab-menu {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
     gap: 1rem;
+    margin-bottom: 1rem;
+    
 }
 
 .tab-btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     cursor: pointer;
-    background-color: #0288d1;
-    color: white;
-    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
-    background-color: #0277bd;
+    color: #0288d1;
+    border-bottom: 3px solid #0288d1;
 }
 
 .tab-btn.active {
-    background-color: #01579b;
+    color: #01579b;
+    border-bottom: 3px solid #01579b;
 }
 
-/* タブコンテンツ */
+/* ====== タブコンテンツのデザイン ====== */
 .tab-content {
     display: none;
-    border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 1.5rem;
-    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* アクティブなタブだけ表示 */
+/* アクティブなコンテンツを表示 */
 .tab-content.active {
     display: block;
+    opacity: 1;
+    transform: translateY(5);
 }
-
 
 
 /* セクションの交互背景色 */
@@ -421,6 +430,7 @@ footer {
     .tab-menu {
         flex-direction: column;
         align-items: center;
+        gap: 0.5rem;
     }
 
     .tab-btn {

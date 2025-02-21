@@ -180,8 +180,9 @@ const translations = {
         "about-summary-tab":"Summary",
         "about-education-tab":"Education",
         "about-certificate-tab":"Certificate",
-        "about-summary-content":"Summary content",
-        "about-education-content":"Education content",
+        "about-summary-content": "This is the first line.<br>This is the second line.",
+        "about-education-content": "Graduated from XYZ University.<br>Major: Computer Science",
+
         "about-certificate-content":"Certificate content",
 
 
@@ -235,7 +236,8 @@ function switchLanguage(lang) {
         } else if (el.tagName === 'BUTTON') {
             el.textContent = translations[lang][key];
         } else {
-            el.textContent = translations[lang][key];
+            // innerHTMLで改行タグやスタイルを反映
+            el.innerHTML  = translations[lang][key];
         }
     });
 
