@@ -116,7 +116,6 @@ section {
 #hero {
     background: linear-gradient(135deg, #906ce4, #28d9e6);
     color: white;
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,6 +179,52 @@ section {
 .github-btn img:hover {
     transform: scale(1.1);
 }
+
+
+/* タブメニューのスタイル */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #0288d1;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #0277bd;
+}
+
+.tab-btn.active {
+    background-color: #01579b;
+}
+
+/* タブコンテンツ */
+.tab-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+/* アクティブなタブだけ表示 */
+.tab-content.active {
+    display: block;
+}
+
+
 
 /* セクションの交互背景色 */
 #about {
@@ -371,6 +416,16 @@ footer {
 
     .hero-card p {
         font-size: 1rem;
+    }
+
+    .tab-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 80%;
+        text-align: center;
     }
 }
 

@@ -24,6 +24,25 @@ function startSlideshow() {
 window.addEventListener('DOMContentLoaded', startSlideshow);
 
 
+// タブ切り替え機能
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // すべてのタブとコンテンツをリセット
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // クリックされたタブと対応するコンテンツをアクティブに
+        tab.classList.add('active');
+        const targetContent = document.getElementById(tab.getAttribute('data-tab'));
+        targetContent.classList.add('active');
+    });
+});
+
+
+
 
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -157,7 +176,15 @@ const translations = {
         "hero-subtitle": "Frontend Developer | Software Tester",
         "view-work": "View My Work",
         "about-title": "About Me",
-        "about-description": "I'm a frontend developer passionate about creating intuitive user experiences and efficient code.",
+        // "about-description": "I'm a frontend developer passionate about creating intuitive user experiences and efficient code.", 
+        "about-summary-tab":"Summary",
+        "about-education-tab":"Education",
+        "about-certificate-tab":"Certificate",
+        "about-summary-content":"Summary content",
+        "about-education-content":"Education content",
+        "about-certificate-content":"Certificate content",
+
+
         "skills-title": "Skills",
         "projects-title": "Projects",
         "navi-description": "Grade management app built using the MERN stack.",
@@ -178,7 +205,14 @@ const translations = {
         "hero-subtitle": "フロントエンドエンジニア | ソフトウェアテスター",
         "view-work": "作品を見る",
         "about-title": "自己紹介",
-        "about-description": "直感的なユーザー体験と効率的なコード作成に情熱を持つフロントエンド開発者です。",
+        // "about-description": "直感的なユーザー体験と効率的なコード作成に情熱を持つフロントエンド開発者です。",
+        "about-summary-tab":"サマリー",
+        "about-education-tab":"学歴",
+        "about-certificate-tab":"資格",
+        "about-summary-content":"サマリーの内容です",
+        "about-education-content":"学歴の内容です",
+        "about-certificate-content":"資格の内容です",
+
         "skills-title": "スキル",
         "projects-title": "プロジェクト",
         "navi-description": "MERNスタックを使用した成績管理アプリ",

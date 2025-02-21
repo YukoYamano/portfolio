@@ -60,10 +60,32 @@
 
 
      <!-- 自己紹介 -->
-     <section id="about">
-        <h2 data-key="about-title">About Me</h2>
-        <p data-key="about-description">I'm a frontend developer passionate about creating intuitive user experiences and efficient code.</p>
-    </section>
+ 
+            <!-- タブ付きのセクション -->
+        <section id="about">
+            <h2 data-key="about-title">About Me</h2>
+
+            <!-- タブボタン -->
+            <div class="tab-menu">
+                <button class="tab-btn active" data-tab="summary"  data-key="about-summary-tab">Summary</button>
+                <button class="tab-btn" data-tab="education"  data-key="about-education-tab" >Education</button>
+                <button class="tab-btn" data-tab="certificate"  data-key="about-certificate-tab" >Certificate</button>
+            </div>
+
+            <!-- タブコンテンツ -->
+            <div class="tab-content active" id="summary" data-key="about-summary-content">
+                <p>This is the summary section. Introduce yourself here.</p>
+            </div>
+
+            <div class="tab-content" id="education" data-key="about-education-content">
+                <p>Details about your education will appear here.</p>
+            </div>
+
+            <div class="tab-content" id="certificate" data-key="about-certificate-content">
+                <p>List your certificates and achievements here.</p>
+            </div>
+        </section>
+
 
        <!-- プロジェクト -->
        <section id="projects">
