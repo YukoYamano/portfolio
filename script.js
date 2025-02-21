@@ -1,3 +1,4 @@
+
 // スムーズスクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -109,6 +110,10 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 
+
+
+
+//言語切替--------------------------------------------------------------------------------------------
 // 言語切り替えボタンを取得
 const langJP = document.getElementById('lang-jp');
 const langEN = document.getElementById('lang-en');
