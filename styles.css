@@ -5,36 +5,58 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+/* 色の変数 */
+:root {
+    --primary-color: #156082;      /* ナビゲーション・フッター */
+    --secondary-color: #01579b;    /* ホバー色など */
+    --accent-color: #FFC107;       /* 強調色 */
+    --background-color: #f9f9f9;   /* 背景色 */
+    --text-color: #333;            /* 通常テキスト */
+    --light-gray: #eaeaea;         /* セクション背景 */
+    --dark-gray: #555;             /* サブテキスト */
+    --white: #ffffff;
+    --success-color: #4CAF50;
+    --success-hover: #45a049;
+    --cta-color: #09186b;
+    --cta-hover: #1f2b6b;
+    --border-color: #ddd;          /* 枠線 */
+    --dot-color: #bbb;             /* ドットの非アクティブ色 */
+    --dot-active-color: var(--primary-color); /* アクティブなドット */
+    --card-bg-color: #ffffff;      /* カードの背景色 */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* カードの影 */
 }
 
+/* グローバル設定 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* スライドショー */
 .slideshow {
     position: relative;
     width: 100%;
-    height: 200px; 
-  
+    height: 200px;
 }
 
 .slideshow img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0; 
-  transition: opacity 1s ease-in-out; /* フェードアニメーション */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .slideshow img.active {
-  opacity: 1;
+    opacity: 1;
 }
-
 
 /* ナビゲーション */
 nav {
-    background-color: #413a58;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 1rem 2rem;
     position: sticky;
     width: 100%;
@@ -43,23 +65,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .logo-container img {
     height: 30px;
-    width: 30px; 
+    width: 30px;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 1rem;
-    
 }
 
 .nav-menu li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
 }
@@ -88,23 +108,21 @@ nav {
     transform: scale(1.1);
 }
 
-
 /* ハンバーガーメニュー */
 .hamburger {
     display: none;
     font-size: 2rem;
     cursor: pointer;
-    color: white;
-    position: absolute; 
+    color: var(--white);
+    position: absolute;
     top: 1rem;
-    right: 1rem; 
+    right: 1rem;
     z-index: 20;
 }
 
 .hamburger:hover {
-    color: #FFC107;
+    color: var(--accent-color);
 }
-
 
 /* セクション設定 */
 section {
@@ -114,17 +132,18 @@ section {
 
 /* ヒーローセクション */
 #hero {
-    background: linear-gradient(135deg, #906ce4, #28d9e6);
-    color: white;
+    opacity: 0.8;
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 30vh;
 }
 
 /* ヒーローカード */
 .hero-card {
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -135,13 +154,13 @@ section {
 
 .hero-card h2 {
     font-size: 2rem;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
 .hero-card p {
     font-size: 1.2rem;
-    color: #555;
+    color: var(--dark-gray);
     margin-bottom: 1.5rem;
 }
 
@@ -154,8 +173,8 @@ section {
 }
 
 .cta-btn {
-    background-color: #09186b;
-    color: white;
+    background-color: var(--cta-color);
+    color: var(--white);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -163,8 +182,8 @@ section {
 }
 
 .cta-btn:hover {
-    background-color: #1f2b6b;
-    color: #FFC107;
+    background-color: var(--cta-hover);
+    color: var(--accent-color);
 }
 
 .linkedin-btn img,
@@ -180,15 +199,12 @@ section {
     transform: scale(1.1);
 }
 
-
 /* タブメニューのスタイル */
-/* ====== タブメニューのスタイル ====== */
 .tab-menu {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    
 }
 
 .tab-btn {
@@ -198,27 +214,27 @@ section {
     background-color: transparent;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #555;
+    color: var(--dark-gray);
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
 }
 
 .tab-btn:hover {
-    color: #0288d1;
-    border-bottom: 3px solid #0288d1;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .tab-btn.active {
-    color: #01579b;
-    border-bottom: 3px solid #01579b;
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
 }
 
-/* ====== タブコンテンツのデザイン ====== */
+/* タブコンテンツ */
 .tab-content {
     display: none;
     border-radius: 8px;
     padding: 1.5rem;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
@@ -227,112 +243,198 @@ section {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* アクティブなコンテンツを表示 */
 .tab-content.active {
     display: block;
     opacity: 1;
-    transform: translateY(5);
+    transform: translateY(0);
 }
-
 
 /* セクションの交互背景色 */
-#about {
-    background-color: #ffffff;
+#about, #skills {
+    background-color: var(--white);
 }
 
-#skills {
-    background-color: #ffffff;
+#projects, #contact {
+    background-color: var(--light-gray);
 }
 
+
+/* ====== プロジェクトセクション ====== */
 #projects {
-    
-    background-color: #eaeaea;
+    padding: 50px 20px;
+    background-color: var(--background-color);
+    text-align: center;
 }
 
-#contact {
-    background-color: #eaeaea;
+#projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
-/* スキル・プロジェクトのカード */
-.skills-grid, .project-grid {
+/* ====== カルーセル全体 ====== */
+.project-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 960px; /* 3つのカードを表示 */
+    margin: 0 auto;
+}
+
+/* ====== スライドコンテナ ====== */
+.project-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+   
+}
+
+/* ====== プロジェクトカード ====== */
+.project-card {
+    display: flex;
+    min-width: 400px; /* 横長にする */
+    height: 200px;    /* 高さを抑える */
+    margin: 0 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--card-bg-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ====== プロジェクトカード内部 ====== */
+.project-content {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+}
+
+.project-image {
+    width: 40%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-details {
+    width: 60%;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.project-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.project-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.project-details li {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+/* ====== 詳細ページリンク ====== */
+.project-link {
+    text-align: right;
+}
+
+.project-link a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-link a:hover {
+    color: var(--secondary-color);
+}
+
+/* ====== カルーセルボタン（左右矢印） ====== */
+.carousel-btn {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: -20px;
+}
+
+/* ====== ドットインジケーター ====== */
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-dots .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: var(--dot-color);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: var(--dot-active-color);
+}
+
+/* スキルのカード */
+.skills-grid {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.skill-card, .project-card {
-    background-color: white;
+.skill-card {
+    background-color: var(--white);
     padding: 20px;
     border-radius: 8px;
     width: 200px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
-.skill-card:hover, .project-card:hover {
+.skill-card:hover {
     transform: translateY(-5px);
-}
-
-/* モーダルの背景 */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); 
-}
-
-/* モーダルのコンテンツ */
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    position: relative;
-}
-
-/* 閉じるボタン */
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.close-btn:hover {
-    color: #000;
-}
-
-/* モーダル内の画像 */
-#modal-image {
-    width: 100%;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-/* モーダルのリンクボタン */
-#modal-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-#modal-link:hover {
-    background-color: #45a049;
 }
 
 
@@ -353,22 +455,22 @@ section {
 }
 
 #contact-form button {
-    background-color: #09186b;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     border: none;
     padding: 10px;
     cursor: pointer;
 }
 
 #contact-form button:hover {
-    background-color: #1f2b6b;
-    color:  #FFC107;
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 /* フッター */
 footer {
-    background-color: #0c032e;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-align: center;
     padding: 10px 0;
 }
@@ -376,19 +478,19 @@ footer {
 /* モバイル表示用 */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; 
+        display: none;
         position: absolute;
         align-items: center;
         top: 60px;
         right: 0;
-        background-color:#1f2b6b;
+        background-color: var(--cta-hover);
         flex-direction: column;
         width: 150px;
         border-radius: 5px;
     }
 
     .nav-menu.active {
-        display: flex; 
+        display: flex;
     }
 
     .nav-menu li {
@@ -398,14 +500,12 @@ footer {
 
     .hamburger {
         display: block;
-        color: white;
+        color: var(--white);
     }
 
     .hamburger:hover {
-        color: #FFC107;
+        color: var(--accent-color);
     }
-
-
 
     .language-switch {
         margin-left: auto;
@@ -437,6 +537,29 @@ footer {
         width: 80%;
         text-align: center;
     }
+
+    .project-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .project-details {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .project-link {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .project-carousel {
+        max-width: 320px; 
+    }
 }
-
-

@@ -1,40 +1,35 @@
-// スライドショー機能
+// ===================== スライドショー機能 =====================
 const slides = document.querySelectorAll('.slideshow img');
 let currentSlide = 0;
 
-// スライドを切り替える関数
-function showSlide(index) {
+function showMainSlide(index) {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active'); // 全て非表示
+        slide.classList.remove('active');
         if (i === index) {
-            slide.classList.add('active'); // 対象のスライドを表示
+            slide.classList.add('active');
         }
     });
 }
 
-// 自動スライド機能
 function startSlideshow() {
     setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length; // 次のスライドへ
-        showSlide(currentSlide);
-    }, 5000); // 5秒ごとに切り替え
+        currentSlide = (currentSlide + 1) % slides.length;
+        showMainSlide(currentSlide);
+    }, 5000);
 }
 
-// ページロード時にスライドショーを開始
 window.addEventListener('DOMContentLoaded', startSlideshow);
 
 
-// タブ切り替え機能
+// ===================== タブ切り替え機能 =====================
 const tabs = document.querySelectorAll('.tab-btn');
 const contents = document.querySelectorAll('.tab-content');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        // すべてのタブとコンテンツをリセット
         tabs.forEach(t => t.classList.remove('active'));
         contents.forEach(c => c.classList.remove('active'));
 
-        // クリックされたタブと対応するコンテンツをアクティブに
         tab.classList.add('active');
         const targetContent = document.getElementById(tab.getAttribute('data-tab'));
         targetContent.classList.add('active');
@@ -42,9 +37,7 @@ tabs.forEach(tab => {
 });
 
 
-
-
-// スムーズスクロール
+// ===================== スムーズスクロール =====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -55,28 +48,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// フッターの年数を自動更新
+
+// ===================== フッターの年数自動更新 =====================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// お問い合わせフォームのバリデーション
+
+// ===================== お問い合わせフォームのバリデーション =====================
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
     alert('Your message has been sent!');
     this.reset();
 });
 
-// スクロールアニメーション
-const sections = document.querySelectorAll('section');
 
-const options = {
-    threshold: 0.2
-};
+// ===================== スクロールアニメーション =====================
+const sections = document.querySelectorAll('section');
+const options = { threshold: 0.2 };
 
 const revealOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // 一度表示したら監視解除
+            observer.unobserve(entry.target);
         }
     });
 }, options);
@@ -87,59 +80,7 @@ sections.forEach(section => {
 });
 
 
-// モーダル関連の要素取得
-const modal = document.getElementById('project-modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalImage = document.getElementById('modal-image');
-const modalLink = document.getElementById('modal-link');
-const closeBtn = document.querySelector('.close-btn');
-
-// プロジェクトデータ
-const projectDetails = {
-    "navi-grade": {
-        title: "Navi Grade",
-        description: "A grade management app built with the MERN stack. Features include real-time updates and intuitive UI.",
-        image: "img/navi-grade.png",      //TODO
-        link: "https://k.com/navi-grade" //TODO
-    },
-    "goal-tracker": {
-        title: "Goal Tracker App",
-        description: "An app to track goals and milestones, helping users stay productive and on schedule.",
-        image: "img/goal-tracker.png",      //TODO
-        link: "https://.com/goal-tracker"   //TODO
-    }
-};
-
-// プロジェクトカードクリックでモーダル表示
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const projectKey = card.getAttribute('data-project');
-        const project = projectDetails[projectKey];
-
-        modalTitle.textContent = project.title;
-        modalDescription.textContent = project.description;
-        modalImage.src = project.image;
-        modalLink.href = project.link;
-
-        modal.style.display = 'block';
-    });
-});
-
-// モーダルの閉じるボタン
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-// モーダル外をクリックで閉じる
-window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-        modal.style.display = 'none';
-    }
-});
-
-
-// ハンバーガーメニューの開閉制御
+// ===================== ハンバーガーメニュー =====================
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
@@ -147,7 +88,6 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// メニューリンクをクリックしたらメニューを閉じる
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -155,16 +95,10 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 
-
-
-
-//言語切替--------------------------------------------------------------------------------------------
-// 言語切り替えボタンを取得
+// ===================== 言語切替 =====================
 const langJP = document.getElementById('lang-jp');
 const langEN = document.getElementById('lang-en');
 
-
-// 言語データ
 const translations = {
     en: {
         "nav-home": "Home",
@@ -176,16 +110,12 @@ const translations = {
         "hero-subtitle": "Frontend Developer | Software Tester",
         "view-work": "View My Work",
         "about-title": "About Me",
-        // "about-description": "I'm a frontend developer passionate about creating intuitive user experiences and efficient code.", 
-        "about-summary-tab":"Summary",
-        "about-education-tab":"Education",
-        "about-certificate-tab":"Certificate",
+        "about-summary-tab": "Summary",
+        "about-education-tab": "Education",
+        "about-certificate-tab": "Certificate",
         "about-summary-content": "This is the first line.<br>This is the second line.",
         "about-education-content": "Graduated from XYZ University.<br>Major: Computer Science",
-
-        "about-certificate-content":"Certificate content",
-
-
+        "about-certificate-content": "Certificate content",
         "skills-title": "Skills",
         "projects-title": "Projects",
         "navi-description": "Grade management app built using the MERN stack.",
@@ -206,14 +136,12 @@ const translations = {
         "hero-subtitle": "フロントエンドエンジニア | ソフトウェアテスター",
         "view-work": "作品を見る",
         "about-title": "自己紹介",
-        // "about-description": "直感的なユーザー体験と効率的なコード作成に情熱を持つフロントエンド開発者です。",
-        "about-summary-tab":"サマリー",
-        "about-education-tab":"学歴",
-        "about-certificate-tab":"資格",
-        "about-summary-content":"サマリーの内容です",
-        "about-education-content":"学歴の内容です",
-        "about-certificate-content":"資格の内容です",
-
+        "about-summary-tab": "サマリー",
+        "about-education-tab": "学歴",
+        "about-certificate-tab": "資格",
+        "about-summary-content": "サマリーの内容です",
+        "about-education-content": "学歴の内容です",
+        "about-certificate-content": "資格の内容です",
         "skills-title": "スキル",
         "projects-title": "プロジェクト",
         "navi-description": "MERNスタックを使用した成績管理アプリ",
@@ -226,31 +154,88 @@ const translations = {
     }
 };
 
-
 function switchLanguage(lang) {
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(el => {
         const key = el.getAttribute('data-key');
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
             el.placeholder = translations[lang][key];
-        } else if (el.tagName === 'BUTTON') {
-            el.textContent = translations[lang][key];
         } else {
-            // innerHTMLで改行タグやスタイルを反映
-            el.innerHTML  = translations[lang][key];
+            el.innerHTML = translations[lang][key];
         }
     });
-
-    // 言語設定をローカルストレージに保存
     localStorage.setItem('site-language', lang);
 }
 
-// ページロード時に言語を反映
 window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('site-language') || 'en';
     switchLanguage(savedLang);
 });
 
-// 言語切り替えボタンクリック
 langJP.addEventListener('click', () => switchLanguage('jp'));
 langEN.addEventListener('click', () => switchLanguage('en'));
+
+const projectSlides = document.querySelector('.project-slides');
+const projectCards = document.querySelectorAll('.project-card');
+const dots = document.querySelectorAll('.dot');
+
+let currentIndex = 0;
+const slideWidth = projectCards[0].offsetWidth + 20;
+
+// クローンを作成して無限ループを実現
+const firstClone = projectCards[0].cloneNode(true);
+const lastClone = projectCards[projectCards.length - 1].cloneNode(true);
+
+firstClone.classList.add('clone');
+lastClone.classList.add('clone');
+
+projectSlides.appendChild(firstClone);
+projectSlides.insertBefore(lastClone, projectCards[0]);
+
+let totalSlides = projectCards.length + 2; // クローンを含めた総数
+projectSlides.style.transform = `translateX(-${slideWidth}px)`; // 最初のスライドに位置調整
+
+function moveToSlide(index) {
+    projectSlides.style.transition = 'transform 0.5s ease-in-out';
+    projectSlides.style.transform = `translateX(-${(index + 1) * slideWidth}px)`;
+
+    currentIndex = index;
+
+    // ドットの更新
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex % projectCards.length].classList.add('active');
+}
+
+// スライドの無限ループ制御
+projectSlides.addEventListener('transitionend', () => {
+    if (currentIndex === projectCards.length) {
+        projectSlides.style.transition = 'none';
+        projectSlides.style.transform = `translateX(-${slideWidth}px)`;
+        currentIndex = 0;
+    }
+
+    if (currentIndex === -1) {
+        projectSlides.style.transition = 'none';
+        projectSlides.style.transform = `translateX(-${slideWidth * projectCards.length}px)`;
+        currentIndex = projectCards.length - 1;
+    }
+});
+
+// ボタン操作
+document.querySelector('.right-btn').addEventListener('click', () => {
+    if (currentIndex < projectCards.length) {
+        moveToSlide(currentIndex + 1);
+    }
+});
+
+document.querySelector('.left-btn').addEventListener('click', () => {
+    moveToSlide(currentIndex - 1);
+});
+
+// ドットクリック
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        moveToSlide(index);
+    });
+});
+
