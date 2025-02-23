@@ -132,7 +132,8 @@ section {
 
 /* ヒーローセクション */
 #hero {
-    background: linear-gradient(135deg, #906ce4, #28d9e6);
+    background: linear-gradient(135deg, #6ccce4, #286be6); 
+
     display: flex;
     justify-content: center;
     align-items: center;

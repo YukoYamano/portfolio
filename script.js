@@ -118,8 +118,13 @@ const translations = {
         "about-certificate-content": "Certificate content",
         "skills-title": "Skills",
         "projects-title": "Projects",
-        "navi-description": "Grade management app built using the MERN stack.",
-        "goal-description": "Track your goals and milestones effortlessly.",
+        
+        "project1-title":"Navi Grade",
+        "project-list1":"XX",
+        "project-list2":"XX",
+        "project-list3":"XXXX",
+
+
         "contact-title": "Contact",
         "contact-name": "Your Name",
         "contact-email": "Your Email",
@@ -144,8 +149,19 @@ const translations = {
         "about-certificate-content": "資格の内容です",
         "skills-title": "スキル",
         "projects-title": "プロジェクト",
-        "navi-description": "MERNスタックを使用した成績管理アプリ",
-        "goal-description": "目標とマイルストーンを簡単に追跡できるアプリ",
+       
+        "project1-title":"Navi Grade - ナビグレード",
+        "project-list1":"学生用タイムマネジメントシステム",
+        "project-list2":"MERNスタックで構成されたウェブアプリケーション",
+        "project-list3":"ReactとReact Bootstrapを使用して構築",
+
+
+
+
+
+
+
+
         "contact-title": "お問い合わせ",
         "contact-name": "お名前",
         "contact-email": "メールアドレス",
