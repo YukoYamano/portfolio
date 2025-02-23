@@ -40,11 +40,19 @@ tabs.forEach(tab => {
 // ===================== スムーズスクロール =====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+
+        // スムーズスクロールは内部リンクのみに適用
+        if (href.startsWith('#') && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
 });
 
@@ -120,9 +128,39 @@ const translations = {
         "projects-title": "Projects",
         
         "project1-title":"Navi Grade",
-        "project-list1":"XX",
-        "project-list2":"XX",
-        "project-list3":"XXXX",
+        "project1-list1":"XX",
+        "project1-list2":"XX",
+        "project1-list3":"XXXX",
+
+        "project2-title":"Navi Grade",
+        "project2-list1":"XX",
+        "project2-list2":"XX",
+        "project2-list3":"XXXX",
+
+        "project3-title":"Navi Grade",
+        "project3-list1":"XX",
+        "project3-list2":"XX",
+        "project3-list3":"XXXX",
+
+        "project4-title":"Navi Grade",
+        "project4-list1":"XX",
+        "project4-list2":"XX",
+        "project4-list3":"XXXX",
+
+        "project5-title":"Navi Grade",
+        "project5-list1":"XX",
+        "project5-list2":"XX",
+        "project5-list3":"XXXX",
+
+        "project6-title":"Navi Grade",
+        "project6-list1":"XX",
+        "project6-list2":"XX",
+        "project6-list3":"XXXX",
+
+        "project7-title":"Navi Grade",
+        "project7-list1":"XX",
+        "project7-list2":"XX",
+        "project7-list3":"XXXX",
 
 
         "contact-title": "Contact",
@@ -151,15 +189,39 @@ const translations = {
         "projects-title": "プロジェクト",
        
         "project1-title":"Navi Grade - ナビグレード",
-        "project-list1":"学生用タイムマネジメントシステム",
-        "project-list2":"MERNスタックで構成されたウェブアプリケーション",
-        "project-list3":"ReactとReact Bootstrapを使用して構築",
+        "project1-list1":"学生用タイムマネジメントシステム",
+        "project1-list2":"MERNスタックで構成されたウェブアプリケーション",
+        "project1-list3":"ReactとReact Bootstrapを使用して構築",
 
+        "project2-title":"Navi Grade",
+        "project2-list1":"XX",
+        "project2-list2":"XX",
+        "project2-list3":"XXXX",
 
+        "project3-title":"Navi Grade",
+        "project3-list1":"XX",
+        "project3-list2":"XX",
+        "project3-list3":"XXXX",
 
+        "project4-title":"Navi Grade",
+        "project4-list1":"XX",
+        "project4-list2":"XX",
+        "project4-list3":"XXXX",
 
+        "project5-title":"Navi Grade",
+        "project5-list1":"XX",
+        "project5-list2":"XX",
+        "project5-list3":"XXXX",
 
+        "project6-title":"Navi Grade",
+        "project6-list1":"XX",
+        "project6-list2":"XX",
+        "project6-list3":"XXXX",
 
+        "project7-title":"Navi Grade",
+        "project7-list1":"XX",
+        "project7-list2":"XX",
+        "project7-list3":"XXXX",
 
 
         "contact-title": "お問い合わせ",
@@ -255,3 +317,97 @@ dots.forEach((dot, index) => {
     });
 });
 
+// モーダル関連の要素取得
+const modal = document.getElementById('project-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalImage = document.getElementById('modal-image');
+const modalDuration = document.getElementById('modal-duration').querySelector('span');
+const modalProcess = document.getElementById('modal-process').querySelector('span');
+const modalDetailLink = document.getElementById('modal-detail-link');
+const closeBtn = document.querySelector('.close-btn');
+
+// プロジェクトデータ
+const projectDetails = {
+    "project1": {
+        title: "Navi Grade",
+        image: "img/NaviGradeScr.png",
+        duration: "3ヶ月",
+        process: "要件定義 → 設計 → 開発 → テスト",
+        link: "https://github.com/Avril-TFS/COMP313-002"
+    },
+    "project2": {
+        title: "箱根 湯本温泉",
+        image: "img/project2.jpg",
+        duration: "2ヶ月",
+        process: "コンセプト設計 → デザイン → 実装",
+        link: "project2-details.html"
+    },
+    "project3": {
+        title: "沖縄 ビーチリゾート",
+        image: "img/project3.jpg",
+        duration: "4ヶ月",
+        process: "要件定義 → UI設計 → 実装 → テスト",
+        link: "project3-details.html"
+    },
+    "project4": {
+        title: "京都 町家ステイ",
+        image: "img/project4.jpg",
+        duration: "2ヶ月",
+        process: "コンセプト設計 → デザイン → 実装",
+        link: "project4-details.html"
+    },
+    "project5": {
+        title: "軽井沢 コテージ",
+        image: "img/project5.jpg",
+        duration: "3ヶ月",
+        process: "要件定義 → 実装 → テスト",
+        link: "project5-details.html"
+    },
+    "project6": {
+        title: "札幌 シティホテル",
+        image: "img/project6.jpg",
+        duration: "1ヶ月",
+        process: "設計 → 実装 → テスト",
+        link: "project6-details.html"
+    },
+    "project7": {
+        title: "那須 高原リゾート",
+        image: "img/project7.jpg",
+        duration: "3ヶ月",
+        process: "要件定義 → デザイン → 実装 → テスト",
+        link: "project7-details.html"
+    }
+};
+
+// ===== モーダル表示処理 =====
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const projectKey = card.getAttribute('data-project-id');
+
+        if (projectDetails[projectKey]) {
+            const project = projectDetails[projectKey];
+
+            modalTitle.textContent = project.title;
+            modalImage.src = project.image;
+            modalDuration.textContent = project.duration;
+            modalProcess.textContent = project.process;
+            modalDetailLink.setAttribute('href', project.link);
+            modalDetailLink.setAttribute('target', '_blank');
+            modal.style.display = 'block';
+        }
+
+        e.stopPropagation();
+    });
+});
+
+// モーダルを閉じる
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// モーダル外をクリックして閉じる
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
