@@ -167,6 +167,9 @@ const translations = {
         "modal-process":"Process",
         "modal-link":"Detail",
 
+
+        "parallax-message":"Let's Connect!",
+
         "contact-title": "Contact",
         "contact-name": "Your Name",
         "contact-email": "Your Email",
@@ -231,6 +234,8 @@ const translations = {
         "modal-duration":"制作期間",
         "modal-process":"制作過程",
         "modal-link":"詳細ページへ",
+
+        "parallax-message":"お問い合わせ",
 
         "contact-title": "お問い合わせ",
         "contact-name": "お名前",

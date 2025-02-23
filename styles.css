@@ -586,6 +586,55 @@ section {
 }
 
 
+/* === パララックスセクション === */
+.parallax-section {
+    background-image: url('img/parallax.jpg'); 
+    height: 400px;
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax-content {
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+.parallax-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+/* === SNSアイコンの配置とスタイル === */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-icons a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+
 /* お問い合わせフォーム */
 #contact-form {
     display: flex;
