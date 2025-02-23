@@ -483,27 +483,107 @@ section {
 }
 
 
-/* スキルのカード */
-.skills-grid {
+/* ===== セクション全体のデザイン ===== */
+#skills {
+    text-align: center;
+    padding: 50px 0;
+    background-color: var(--background-color); 
+    max-width: 1000px; /* 最大幅 */
+    margin: 0 auto;    /* 中央寄せ */
+}
+
+#skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* ===== カルーセルのコンテナ ===== */
+.skills-carousel {
+    overflow: hidden; /* 通常時は隠す */
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;    
+    border-radius: 8px; 
+    /* border: 1px solid #ff0303;  */
+}
+
+/* ===== スキルのトラック ===== */
+.skills-track {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    animation: scrollSkills 20s linear infinite;
 }
 
+/* ===== スキルカードのデザイン ===== */
 .skill-card {
-    background-color: var(--white);
-    padding: 20px;
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.5s;
+    position: relative;
 }
 
+/* ===== ホバーで拡大表示 ===== */
 .skill-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* ===== スキルのアイコン ===== */
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* ===== 無限ループの自動スクロールアニメーション ===== */
+/* @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+} */
+
+
+
+/* ツールチップ */
+.skill-card .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill-card:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* アニメーション */
+@keyframes scrollSkills {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 
 /* お問い合わせフォーム */
@@ -642,5 +722,19 @@ footer {
 
     .project-carousel {
         max-width: 320px; 
+    }
+
+    .skills-carousel {
+        overflow-x: auto;
+        animation: none;
+    }
+
+    .skills-track {
+        display: flex;
+        animation: none;
+    }
+
+    .skill-card {
+        flex: 0 0 auto;
     }
 }

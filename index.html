@@ -244,18 +244,65 @@
 
 
 
-    <!-- スキルセット -->
-    <section id="skills">
-        <h2 data-key="skills-title">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">HTML</div>
-            <div class="skill-card">CSS</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">React</div>
-            <div class="skill-card">Postman</div>
-            <div class="skill-card">Selenium</div>
+<section id="skills">
+    <h2 data-key="skills-title">Skills</h2>
+    <div class="skills-carousel">
+        <div class="skills-track">
+            <!-- スキルカード: HTML -->
+            <div class="skill-card" data-description="Markup Language for creating web pages">
+                <img src="img/html-icon.png" alt="HTML Icon" class="skill-icon">
+                <p>HTML</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: CSS -->
+            <div class="skill-card" data-description="Stylesheet language for designing web pages">
+                <img src="img/css-icon.png" alt="CSS Icon" class="skill-icon">
+                <p>CSS</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: JavaScript -->
+            <div class="skill-card" data-description="Programming language for web interactivity">
+                <img src="img/js-icon.png" alt="JavaScript Icon" class="skill-icon">
+                <p>JavaScript</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: React -->
+            <div class="skill-card" data-description="JavaScript library for building UIs">
+                <img src="img/react-icon.png" alt="React Icon" class="skill-icon">
+                <p>React.js</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: Node.js -->
+            <div class="skill-card" data-description="JavaScript runtime for backend development">
+                <img src="img/nodejs-icon.png" alt="Node.js Icon" class="skill-icon">
+                <p>Node.js</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: Git -->
+            <div class="skill-card" data-description="Version control system for source code management">
+                <img src="img/git-icon.png" alt="Git Icon" class="skill-icon">
+                <p>Git</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
+
+            <!-- スキルカード: Selenium -->
+            <div class="skill-card" data-description="Automation testing tool for web apps">
+                <img src="img/selenium-icon.png" alt="Selenium Icon" class="skill-icon">
+                <p>Selenium</p>
+                <span class="tooltip">HTML5 Markup</span>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- ツールチップ表示用 -->
+    <div class="tooltip" id="tooltip"></div>
+</section>
+
 
  
  <!-- parallax -->

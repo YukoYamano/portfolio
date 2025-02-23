@@ -492,3 +492,38 @@ window.addEventListener('click', (e) => {
         currentProjectKey = null;
     }
 });
+
+
+// ツールチップの表示制御
+const skillCards = document.querySelectorAll('.skill-card');
+const tooltip = document.getElementById('tooltip');
+
+skillCards.forEach(card => {
+    card.addEventListener('mouseover', (e) => {
+        const description = card.getAttribute('data-description');
+        tooltip.textContent = description;
+        tooltip.style.display = 'block';
+        positionTooltip(e);
+    });
+
+    card.addEventListener('mousemove', (e) => {
+        positionTooltip(e);
+    });
+
+    card.addEventListener('mouseout', () => {
+        tooltip.style.display = 'none';
+    });
+});
+
+
+// カルーセルの無限ループを作成
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsTrack = document.querySelector('.skills-track');
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    // スキルカードを複製して末尾に追加
+    skillCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        skillsTrack.appendChild(clone);
+    });
+});
