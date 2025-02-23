@@ -162,6 +162,10 @@ const translations = {
         "project7-list2":"XX",
         "project7-list3":"XXXX",
 
+        "modal-title":"Title",
+        "modal-duration":"Duration",
+        "modal-process":"Process",
+        "modal-link":"Detail",
 
         "contact-title": "Contact",
         "contact-name": "Your Name",
@@ -223,6 +227,10 @@ const translations = {
         "project7-list2":"XX",
         "project7-list3":"XXXX",
 
+        "modal-title":"タイトル",
+        "modal-duration":"制作期間",
+        "modal-process":"制作過程",
+        "modal-link":"詳細ページへ",
 
         "contact-title": "お問い合わせ",
         "contact-name": "お名前",
@@ -318,6 +326,10 @@ dots.forEach((dot, index) => {
 });
 
 // モーダル関連の要素取得
+
+let currentLang = localStorage.getItem('site-language') || 'en';
+let currentProjectKey = null; // モーダルで表示中のプロジェクトを保持
+
 const modal = document.getElementById('project-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalImage = document.getElementById('modal-image');
@@ -329,85 +341,154 @@ const closeBtn = document.querySelector('.close-btn');
 // プロジェクトデータ
 const projectDetails = {
     "project1": {
-        title: "Navi Grade",
-        image: "img/NaviGradeScr.png",
-        duration: "3ヶ月",
-        process: "要件定義 → 設計 → 開発 → テスト",
-        link: "https://github.com/Avril-TFS/COMP313-002"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project2": {
-        title: "箱根 湯本温泉",
-        image: "img/project2.jpg",
-        duration: "2ヶ月",
-        process: "コンセプト設計 → デザイン → 実装",
-        link: "project2-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project3": {
-        title: "沖縄 ビーチリゾート",
-        image: "img/project3.jpg",
-        duration: "4ヶ月",
-        process: "要件定義 → UI設計 → 実装 → テスト",
-        link: "project3-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project4": {
-        title: "京都 町家ステイ",
-        image: "img/project4.jpg",
-        duration: "2ヶ月",
-        process: "コンセプト設計 → デザイン → 実装",
-        link: "project4-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project5": {
-        title: "軽井沢 コテージ",
-        image: "img/project5.jpg",
-        duration: "3ヶ月",
-        process: "要件定義 → 実装 → テスト",
-        link: "project5-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project6": {
-        title: "札幌 シティホテル",
-        image: "img/project6.jpg",
-        duration: "1ヶ月",
-        process: "設計 → 実装 → テスト",
-        link: "project6-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     },
     "project7": {
-        title: "那須 高原リゾート",
-        image: "img/project7.jpg",
-        duration: "3ヶ月",
-        process: "要件定義 → デザイン → 実装 → テスト",
-        link: "project7-details.html"
+        en: {
+            title: "Navi Grade",
+            duration: "3 months",
+            process: "Requirement → Design → Development → Testing",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        },
+        jp: {
+            title: "ナビグレード",
+            duration: "3ヶ月",
+            process: "要件定義 → 設計 → 開発 → テスト",
+            link: "https://github.com/Avril-TFS/COMP313-002",
+            image: "img/NaviGradeScr.png"
+        }
     }
 };
 
 // ===== モーダル表示処理 =====
+
+
+// モーダル表示関数
+function showModal(projectKey) {
+    currentProjectKey = projectKey; // モーダルで表示中のプロジェクトを保持
+    const project = projectDetails[projectKey][currentLang];
+
+    modalTitle.textContent = project.title;
+    modalImage.src = project.image;
+    modalDuration.textContent = project.duration;
+    modalProcess.textContent = project.process;
+    modalDetailLink.setAttribute('href', project.link);
+    modalDetailLink.setAttribute('target', '_blank');
+    modal.style.display = 'block';
+}
+
+// プロジェクトカードクリックでモーダル表示
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
         const projectKey = card.getAttribute('data-project-id');
-
-        if (projectDetails[projectKey]) {
-            const project = projectDetails[projectKey];
-
-            modalTitle.textContent = project.title;
-            modalImage.src = project.image;
-            modalDuration.textContent = project.duration;
-            modalProcess.textContent = project.process;
-            modalDetailLink.setAttribute('href', project.link);
-            modalDetailLink.setAttribute('target', '_blank');
-            modal.style.display = 'block';
-        }
-
-        e.stopPropagation();
+        showModal(projectKey);
     });
 });
 
 // モーダルを閉じる
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
+    currentProjectKey = null;
 });
 
-// モーダル外をクリックして閉じる
+// モーダル外クリックで閉じる
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = 'none';
+        currentProjectKey = null;
     }
 });
