@@ -170,6 +170,21 @@ const translations = {
 
         "parallax-message":"Let's Connect!",
 
+
+        "faq-title": "Frequently Asked Questions",
+        "faq-q1": "What services do you offer?",
+        "faq-a1": "I offer frontend development, website testing, and UX design improvements. I specialize in creating user-friendly and responsive websites.",
+        "faq-q2": "How long does it take to complete a project?",
+        "faq-a2": "Project timelines vary based on complexity. Small projects typically take 1-2 weeks, while larger projects may take up to a month.",
+        "faq-q3": "What are your rates?",
+        "faq-a3": "Rates depend on the project scope. I offer flexible pricing models, including hourly rates and fixed-price contracts.",
+        "faq-q4": "Can you update or improve an existing website?",
+        "faq-a4": "Absolutely! I can optimize existing websites for better performance, update content, or redesign layouts for a modern look.",
+        "faq-q5": "How can I get in touch for a project?",
+        "faq-a5": "You can reach out to me through the contact form below or connect with me via LinkedIn or GitHub for collaborations.",
+
+
+
         "contact-title": "Contact",
         "contact-name": "Your Name",
         "contact-email": "Your Email",
@@ -236,6 +251,19 @@ const translations = {
         "modal-link":"詳細ページへ",
 
         "parallax-message":"お問い合わせ",
+
+
+        "faq-title": "よくある質問",
+        "faq-q1": "どのようなサービスを提供していますか？",
+        "faq-a1": "フロントエンド開発、ウェブサイトのテスト、UX改善を提供しています。使いやすくレスポンシブなサイト制作を得意としています。",
+        "faq-q2": "プロジェクトの納期はどれくらいですか？",
+        "faq-a2": "プロジェクトの規模により異なりますが、小規模なものは1〜2週間、大規模なものは最大1ヶ月かかる場合があります。",
+        "faq-q3": "料金体系はどうなっていますか？",
+        "faq-a3": "プロジェクトの規模に応じて柔軟に対応しています。時間単価や固定料金の両方に対応可能です。",
+        "faq-q4": "既存のウェブサイトの更新や改善はできますか？",
+        "faq-a4": "もちろん可能です！パフォーマンスの最適化、デザインの刷新、コンテンツの更新など幅広く対応いたします。",
+        "faq-q5": "プロジェクトの依頼はどうすればいいですか？",
+        "faq-a5": "下部のコンタクトフォームから、またはLinkedIn・GitHub経由でお気軽にご連絡ください。",
 
         "contact-title": "お問い合わせ",
         "contact-name": "お名前",
@@ -530,5 +558,17 @@ document.addEventListener("DOMContentLoaded", () => {
     skillCards.forEach(card => {
         const clone = card.cloneNode(true);
         skillsTrack.appendChild(clone);
+    });
+});
+
+
+// FAQのアコーディオン機能
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        answer.classList.toggle('active');
+        btn.classList.toggle('active');
     });
 });

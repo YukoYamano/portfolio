@@ -24,6 +24,8 @@
     --dot-active-color: var(--primary-color); /* アクティブなドット */
     --card-bg-color: #ffffff;      /* カードの背景色 */
     --shadow-color: rgba(0, 0, 0, 0.1); /* カードの影 */
+    --question-color-hover:#d0e2ff; 
+    --question-color-background:#f7f9fd; 
 }
 
 /* グローバル設定 */
@@ -634,6 +636,89 @@ section {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
 }
 
+/* ===== FAQセクション全体 ===== */
+#faq {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    text-align: center;
+}
+
+#faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ===== FAQアイテム ===== */
+.faq-item {
+    width: 80%;
+    max-width: 800px;
+    margin: 15px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== 質問ボタン ===== */
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 18px 20px;
+    background-color: var(--question-color-background);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.faq-question:hover {
+    background-color: var(--question-color-hover)
+}
+
+.faq-question .icon {
+    margin-right: 10px;
+}
+
+.toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+/* ===== 回答（初期は非表示） ===== */
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+   
+    background-color: var(--card-bg-color);
+    text-align: left;
+    border-top: 1px solid #ccc;
+    font-size: 1rem;
+    color:var(--cta-hover);
+    animation: fadeIn 0.5s ease;
+}
+
+/* アクティブな回答表示 */
+.faq-answer.active {
+    display: block;
+}
+
+/* 質問が開いたときのプラスアイコン回転 */
+.faq-question.active .toggle-icon {
+    transform: rotate(45deg);
+}
 
 /* お問い合わせフォーム */
 #contact-form {
@@ -786,4 +871,18 @@ footer {
     .skill-card {
         flex: 0 0 auto;
     }
+
+    .faq-item {
+        width: 95%;
+    }
+
+    #faq h2 {
+        font-size: 2rem;
+    }
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
