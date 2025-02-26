@@ -812,6 +812,71 @@ input[type="radio"] {
 }
 
 
+/* 問い合わせフォーム全体 */
+#contact-form-section {
+    max-width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+}
+
+/* 入力フィールドのデザイン */
+#contact-form label {
+    display: block;
+    text-align: left;
+    /* background-color: var(--); */
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* 送信ボタン */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: var(--dark-gray);
+    /* background: #156082; */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #0f4a60;
+}
+
+/* エラーメッセージ */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* 送信完了メッセージ */
+.success-message {
+    color:var(--success-color);
+    font-size: 16px;
+    margin-top: 15px;
+    display: none;
+}
+
+
 /* フッター */
 footer {
     background-color: var(--primary-color);
@@ -963,7 +1028,17 @@ footer {
         font-size: 14px;
         padding: 10px;
     }
-    
+
+    #contact-form-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
 }
 
 
