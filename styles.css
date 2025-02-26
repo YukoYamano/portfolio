@@ -788,7 +788,7 @@ input[type="radio"] {
 }
 
 /* ボタン */
-.next-btn, .btn-submit {
+.next-btn {
     background: var(--primary-color);
     color: white;
     padding: 10px 15px;
@@ -799,7 +799,7 @@ input[type="radio"] {
     transition: all 0.3s ease;
 }
 
-.next-btn:hover, .btn-submit:hover {
+.next-btn:hover:hover {
     background: var(--secondary-color);
 }
 
@@ -826,7 +826,7 @@ input[type="radio"] {
 /* 入力フィールドのデザイン */
 #contact-form label {
     display: block;
-    text-align: left;
+    text-align: center;
     /* background-color: var(--); */
     margin-top: 10px;
     font-weight: bold;
@@ -843,11 +843,11 @@ input[type="radio"] {
 }
 
 /* 送信ボタン */
-.submit-btn {
-    width: 100%;
+.btn-submit {
+    width: 80%;
     padding: 12px;
-    margin-top: 15px;
-    background: var(--dark-gray);
+    margin:0 auto;
+    background: var(--cta-color);
     /* background: #156082; */
     color: white;
     font-size: 16px;
@@ -857,8 +857,9 @@ input[type="radio"] {
     transition: 0.3s ease;
 }
 
-.submit-btn:hover {
-    background: #0f4a60;
+.btn-submit:hover {
+    background:var(--cta-hover);
+    color: var(--accent-color);
 }
 
 /* エラーメッセージ */
@@ -875,6 +876,7 @@ input[type="radio"] {
     margin-top: 15px;
     display: none;
 }
+
 
 
 /* フッター */

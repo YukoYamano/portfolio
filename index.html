@@ -13,31 +13,25 @@
         <img src="img/image2.png" alt="スライド1" class="active">
         <img src="img/image1.png" alt="スライド2">
     </header>
-            <nav>
-                <!-- ハンバーガーメニューアイコン -->
-                <div class="hamburger" id="hamburger">
-                    &#9776; 
-                </div>
-                <!-- ナビゲーションメニュー -->
-                <div class="logo-container">
-                    <img src="img/mypicture2.jpg" alt="Yuko_logo">
-                
-                </div>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#hero" data-key="nav-home">Home</a></li>
-                    <li><a href="#about" data-key="nav-about">About Me</a></li>
-                    <li><a href="#projects" data-key="nav-projects">Projects</a></li>
-                    <li><a href="#skills" data-key="nav-skills">Skills</a></li>
-                    <li><a href="#faq" data-key="nav-faq">FAQ</a></li>
-                    <li><a href="#step-form" data-key="nav-contact">Contact</a></li>
-             
-                </ul>
-                <!-- 言語切り替えボタン -->
-                <div class="language-switch">
-                    <img src="img/japanSFlag.png" alt="日本語" id="lang-jp" class="flag-icon">
-                    <img src="img/canadaSFlag.png" alt="English" id="lang-en" class="flag-icon">
-                </div>
-            </nav>
+         
+                <nav>
+                    <div class="hamburger" id="hamburger">&#9776;</div>
+                    <div class="logo-container">
+                        <img src="img/mypicture2.jpg" alt="Yuko_logo">
+                    </div>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="index.html#hero" data-key="nav-home">Home</a></li>
+                        <li><a href="index.html#about" data-key="nav-about">About Me</a></li>
+                        <li><a href="index.html#projects" data-key="nav-projects">Projects</a></li>
+                        <li><a href="index.html#skills" data-key="nav-skills">Skills</a></li>
+                        <li><a href="index.html#faq" data-key="nav-faq">FAQ</a></li>
+                        <li><a href="index.html#step-form" data-key="nav-contact">Contact</a></li>
+                    </ul>
+                    <div class="language-switch">
+                        <img src="img/japanSFlag.png" alt="日本語" id="lang-jp" class="flag-icon">
+                        <img src="img/canadaSFlag.png" alt="English" id="lang-en" class="flag-icon">
+                    </div>
+                </nav>
   
      
 
@@ -382,37 +376,67 @@
         </div>
     </section>
   
-      <!-- Selectional Contact -->
-      <section id="step-form">
-        <h2 data-key="step-title">お問い合わせ</h2>
-        <div class="error-message-contact" data-key="error-message-contact"></div>
-        
-    
-        <!-- ステップボタン -->
-        <div class="step-buttons">
-            <button class="step-btn active" data-step="1" data-key="step-1">STEP.1</button>
-            <button class="step-btn" data-step="2" data-key="step-2">STEP.2</button>
-        </div>
-    
-        <!-- Step 1：あなたについて教えてください -->
-        <div class="step step-1 active">
-            <h3 data-key="step1-title">あなたについて教えてください</h3>
-            <label><input type="radio" name="user-type" value="個人"> <span data-key="user-individual">個人</span></label>
-            <label><input type="radio" name="user-type" value="法人"> <span data-key="user-business">法人</span></label>
-            <button class="next-btn" data-key="next">次へ進む</button>
-        </div>
-    
-        <!-- Step 2：相談内容 -->
-        <div class="step step-2">
-            <h3 data-key="step2-title">何について相談したいですか？</h3>
-            <label><input type="radio" name="consultation" value="Web開発"> <span data-key="consult-web">Web開発</span></label>
-            <label><input type="radio" name="consultation" value="ソフトウェアテスト"> <span data-key="consult-test">ソフトウェアテスト</span></label>
-            <label><input type="radio" name="consultation" value="その他"> <span data-key="consult-other">その他</span></label>
-            <button id="go-to-contact" class="btn-submit" data-key="go-contact">問い合わせフォームへ</button>
-        </div>
-    </section>
-    
+    <!-- Selectional Contact -->
+<section id="step-form">
+    <h2 data-key="step-title">お問い合わせ</h2>
+    <div class="error-message-contact" data-key="error-message-contact"></div>
 
+    <!-- ステップボタン -->
+    <div class="step-buttons">
+        <button class="step-btn active" data-step="1" data-key="step-1">STEP.1</button>
+        <button class="step-btn" data-step="2" data-key="step-2">STEP.2</button>
+        <button class="step-btn" data-step="3" data-key="step-3">STEP.3</button>
+    </div>
+
+    <!-- Step 1：あなたについて教えてください -->
+    <div class="step step-1 active">
+        <h3 data-key="step1-title">あなたについて教えてください</h3>
+        <label><input type="radio" name="user-type" value="個人"> <span data-key="user-individual">個人</span></label>
+        <label><input type="radio" name="user-type" value="法人"> <span data-key="user-business">法人</span></label>
+        <button class="next-btn" data-key="next">次へ進む</button>
+    </div>
+
+    <!-- Step 2：相談内容 -->
+    <div class="step step-2">
+        <h3 data-key="step2-title">何について相談したいですか？</h3>
+        <label><input type="radio" name="consultation" value="Web開発"> <span data-key="consult-web">Web開発</span></label>
+        <label><input type="radio" name="consultation" value="ソフトウェアテスト"> <span data-key="consult-test">ソフトウェアテスト</span></label>
+        <label><input type="radio" name="consultation" value="その他"> <span data-key="consult-other">その他</span></label>
+        <button class="next-btn" data-key="go-contact">問い合わせフォームへ</button>
+    </div>
+
+    <!-- Step 3：問い合わせフォーム -->
+    <div class="step step-3">
+        <h3 data-key="step3-title">お問い合わせフォーム</h3>
+        <form id="contact-form">
+            <label>
+                <!-- <span data-key="contact-type">個人/法人</span>
+                <input type="text" id="contact-user-type" name="user-type" readonly>
+            </label>
+            <label>
+                <span data-key="contact-topic">相談種別</span>
+                <input type="text" id="contact-consultation" name="consultation" readonly>
+            </label> -->
+
+            <label>
+                <span data-key="contact-name">お名前</span>
+                <input type="text" id="contact-name" name="name" required>
+            </label>
+            <label>
+                <span data-key="contact-email">メールアドレス</span>
+                <input type="email" id="contact-email" name="email" required>
+            </label>
+           
+            <label>
+                <span data-key="contact-message">メッセージ</span>
+                <textarea id="contact-message" name="message" required></textarea>
+            </label>
+            <button class="btn-submit" type="submit" data-key="contact-submit">送信</button>
+        </form>
+    </div>
+</section>
+
+    
     <!-- フッター -->
     <footer>
         <p>&copy; <span id="year"></span> Yuko Yamano. All Rights Reserved.</p>

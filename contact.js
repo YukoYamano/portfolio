@@ -45,3 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("site-language", "en");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const goBackButton = document.getElementById("go-back-button");
+
+    if (goBackButton) {
+        goBackButton.addEventListener("click", function () {
+            window.history.back(); //  1つ前のページに戻る
+        });
+    }
+});
+

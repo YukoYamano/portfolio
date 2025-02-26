@@ -8,6 +8,28 @@
 </head>
 <body>
 
+    <!-- ナビゲーションバー -->
+    <nav>
+        <div class="logo-container">
+            <img src="img/mypicture2.jpg" alt="Yuko_logo">
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html" data-key="nav-home">Home</a></li>
+            <li><a href="index.html#about" data-key="nav-about">About Me</a></li>
+            <li><a href="index.html#projects" data-key="nav-projects">Projects</a></li>
+            <li><a href="index.html#skills" data-key="nav-skills">Skills</a></li>
+            <li><a href="index.html#faq" data-key="nav-faq">FAQ</a></li>
+            <li><a href="contact.html" data-key="nav-contact">Contact</a></li>
+        </ul>
+
+        <!-- 言語切替ボタン -->
+        <div class="language-switch">
+            <img src="img/japanSFlag.png" alt="日本語" id="lang-jp" class="flag-icon">
+            <img src="img/canadaSFlag.png" alt="English" id="lang-en" class="flag-icon">
+        </div>
+    </nav>
+
+
     <!-- 問い合わせフォーム -->
     <section id="contact-form-section">
         <h2 data-key="contact-title">お問い合わせ</h2>
@@ -36,10 +58,18 @@
             <button type="submit" class="submit-btn" data-key="submit-button">送信</button>
         </form>
 
+        <button id="go-back-button" class="btn-secondary" data-key="contact-go-back-button">
+          前のページに戻る
+        </button>
+
         <!-- 送信完了メッセージ -->
         <div class="success-message" data-key="success-message"></div>
     </section>
 
-    <script src="contact.js"></script>
+
+     <script src="contact.js"></script>
+     <script src="script.js"></script>
+
+   
 </body>
 </html>
