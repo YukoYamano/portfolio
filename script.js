@@ -62,11 +62,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 
 // ===================== お問い合わせフォームのバリデーション =====================
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Your message has been sent!');
-    this.reset();
-});
+// document.getElementById('contact-form').addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     alert('Your message has been sent!');
+//     this.reset();
+// });
 
 
 // ===================== スクロールアニメーション =====================
@@ -185,11 +185,20 @@ const translations = {
 
 
 
-        "contact-title": "Contact",
-        "contact-name": "Your Name",
-        "contact-email": "Your Email",
-        "contact-message": "Your Message",
-        "contact-submit": "Send Message"
+        "step-title": "Contact",
+      
+        "step-1": "STEP.1",
+        "step-2": "STEP.2",
+        "step1-title": "Tell us about yourself",
+        "user-individual": "Individual",
+        "user-business": "Business",
+        "step2-title": "What would you like to consult about?",
+        "consult-web": "Web Development",
+        "consult-test": "Software Testing",
+        "consult-other": "Other",
+        "next": "Next",
+        "go-contact": "Proceed to Contact Form"
+
     },
     jp: {
         "nav-home": "ホーム",
@@ -265,11 +274,19 @@ const translations = {
         "faq-q5": "プロジェクトの依頼はどうすればいいですか？",
         "faq-a5": "下部のコンタクトフォームから、またはLinkedIn・GitHub経由でお気軽にご連絡ください。",
 
-        "contact-title": "お問い合わせ",
-        "contact-name": "お名前",
-        "contact-email": "メールアドレス",
-        "contact-message": "メッセージ",
-        "contact-submit": "送信"
+        "step-title": "お問い合わせの前に",
+      
+        "step-1": "STEP.1",
+        "step-2": "STEP.2",
+        "step1-title": "あなたについて教えてください",
+        "user-individual": "個人",
+        "user-business": "法人",
+        "step2-title": "何について相談したいですか？",
+        "consult-web": "Web開発",
+        "consult-test": "ソフトウェアテスト",
+        "consult-other": "その他",
+        "next": "次へ進む",
+        "go-contact": "問い合わせフォームへ"
     }
 };
 
@@ -571,4 +588,137 @@ faqQuestions.forEach((btn) => {
         answer.classList.toggle('active');
         btn.classList.toggle('active');
     });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const steps = document.querySelectorAll('.step');
+    const stepBtns = document.querySelectorAll('.step-btn');
+    const nextBtns = document.querySelectorAll('.next-btn');
+    const errorMessageDiv = document.querySelector('.error-message-contact');
+    const goToContactBtn = document.getElementById('go-to-contact');
+
+    let currentStep = 0;
+    let currentLang = localStorage.getItem('site-language') || 'en';
+
+    // エラーメッセージを最初は非表示にする
+    errorMessageDiv.style.display = "none";
+
+    // 言語ごとのエラーメッセージ
+    const errorMessages = {
+        en: "Please select an option.",
+        jp: "いずれかを選択してください。"
+    };
+
+    function showStep(index) {
+        steps.forEach(step => step.classList.remove('active'));
+        stepBtns.forEach(btn => btn.classList.remove('active'));
+
+        steps[index].classList.add('active');
+        stepBtns[index].classList.add('active');
+
+        // ステップを切り替えたらエラーメッセージをリセットして非表示にする
+        errorMessageDiv.textContent = "";
+        errorMessageDiv.style.display = "none";
+    }
+
+    function updateErrorMessage() {
+        currentLang = localStorage.getItem('site-language') || 'en';
+    }
+
+    // **次へ進むボタン**
+    nextBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function () {
+            const radios = steps[index].querySelectorAll('input[type="radio"]');
+            const selected = Array.from(radios).some(radio => radio.checked);
+
+            if (!selected) {
+                updateErrorMessage();
+                errorMessageDiv.textContent = errorMessages[currentLang];
+                errorMessageDiv.style.color = "red";
+                errorMessageDiv.style.display = "block"; // エラーメッセージを表示
+                return;
+            }
+
+            errorMessageDiv.textContent = ""; // エラーをクリア
+            errorMessageDiv.style.display = "none"; // エラーメッセージを非表示
+
+            if (index < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // **ステップボタンのクリックを制御**
+    stepBtns.forEach((btn, index) => {
+        btn.addEventListener('click', function () {
+            if (index === 1 && currentStep === 0) {
+                // Step2のボタンを押す前にStep1の選択をチェック
+                const radios = document.querySelectorAll('input[name="user-type"]');
+                const selected = Array.from(radios).some(radio => radio.checked);
+
+                if (!selected) {
+                    updateErrorMessage();
+                    errorMessageDiv.textContent = errorMessages[currentLang];
+                    errorMessageDiv.style.color = "red";
+                    errorMessageDiv.style.display = "block"; // エラーメッセージを表示
+                    return;
+                }
+            }
+            currentStep = index;
+            showStep(currentStep);
+        });
+    });
+
+    // ラジオボタン選択時にエラーメッセージを非表示にする
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            errorMessageDiv.textContent = "";
+            errorMessageDiv.style.display = "none";
+        });
+    });
+
+    // **問い合わせフォームへ移動**
+    goToContactBtn.addEventListener('click', function () {
+        const radios = steps[currentStep].querySelectorAll('input[type="radio"]');
+        const selected = Array.from(radios).some(radio => radio.checked);
+
+        if (!selected) {
+            updateErrorMessage();
+            errorMessageDiv.textContent = errorMessages[currentLang];
+            errorMessageDiv.style.color = "red";
+            errorMessageDiv.style.display = "block"; // エラーメッセージを表示
+            return;
+        }
+
+        errorMessageDiv.textContent = ""; // エラーをクリア
+        errorMessageDiv.style.display = "none"; // エラーメッセージを非表示
+
+        // 選択された値を取得
+        const userTypeElement = document.querySelector('input[name="user-type"]:checked');
+        const consultationElement = document.querySelector('input[name="consultation"]:checked');
+
+        // `?` をつけるための条件
+        const params = [];
+        if (userTypeElement) params.push(`userType=${encodeURIComponent(userTypeElement.value)}`);
+        if (consultationElement) params.push(`consultation=${encodeURIComponent(consultationElement.value)}`);
+
+        // パラメータがある場合のみ `?` を追加
+        const queryString = params.length ? "?" + params.join("&") : "";
+
+        window.location.href = `contact.html${queryString}`;
+    });
+
+    // 言語切り替え時にエラーメッセージを変更
+    document.getElementById('lang-jp').addEventListener('click', () => {
+        localStorage.setItem('site-language', 'jp');
+        currentLang = 'jp';
+    });
+
+    document.getElementById('lang-en').addEventListener('click', () => {
+        localStorage.setItem('site-language', 'en');
+        currentLang = 'en';
+    });
+
+    showStep(currentStep);
 });

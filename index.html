@@ -333,6 +333,7 @@
             <div class="faq-answer" data-key="faq-a1">
                 I offer frontend development, website testing, and UX design improvements. I specialize in creating user-friendly and responsive websites.
             </div>
+
         </div>
 
         <div class="faq-item">
@@ -379,19 +380,37 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Testimonials -->
-      <!-- Contact -->
-    <section id="contact">
-        <h2 data-key="contact-title">Contact</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Your Name" required data-key="contact-name">
-            <input type="email" placeholder="Your Email" required data-key="contact-email">
-            <textarea placeholder="Your Message" required data-key="contact-message"></textarea>
-            <button type="submit" data-key="contact-submit">Send Message</button>
-        </form>
+  
+      <!-- Selectional Contact -->
+      <section id="step-form">
+        <h2 data-key="step-title">お問い合わせ</h2>
+        <div class="error-message-contact" data-key="error-message-contact"></div>
+        
+    
+        <!-- ステップボタン -->
+        <div class="step-buttons">
+            <button class="step-btn active" data-step="1" data-key="step-1">STEP.1</button>
+            <button class="step-btn" data-step="2" data-key="step-2">STEP.2</button>
+        </div>
+    
+        <!-- Step 1：あなたについて教えてください -->
+        <div class="step step-1 active">
+            <h3 data-key="step1-title">あなたについて教えてください</h3>
+            <label><input type="radio" name="user-type" value="個人"> <span data-key="user-individual">個人</span></label>
+            <label><input type="radio" name="user-type" value="法人"> <span data-key="user-business">法人</span></label>
+            <button class="next-btn" data-key="next">次へ進む</button>
+        </div>
+    
+        <!-- Step 2：相談内容 -->
+        <div class="step step-2">
+            <h3 data-key="step2-title">何について相談したいですか？</h3>
+            <label><input type="radio" name="consultation" value="Web開発"> <span data-key="consult-web">Web開発</span></label>
+            <label><input type="radio" name="consultation" value="ソフトウェアテスト"> <span data-key="consult-test">ソフトウェアテスト</span></label>
+            <label><input type="radio" name="consultation" value="その他"> <span data-key="consult-other">その他</span></label>
+            <button id="go-to-contact" class="btn-submit" data-key="go-contact">問い合わせフォームへ</button>
+        </div>
     </section>
+    
 
     <!-- フッター -->
     <footer>
