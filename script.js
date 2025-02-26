@@ -202,12 +202,8 @@ const translations = {
         "go-contact": "Proceed to Contact Form",
         "step3-title": "Contact",
 
-
-
         
          // `contact.html` の翻訳を追加
-        //  "contact-type":"Individual/Business",
-        //  "contact-topic":"Consulting Type",
          "contact-title": "Contact Me",
          "contact-name": "Your Name",
          "contact-email": "Your Email",
@@ -312,8 +308,6 @@ const translations = {
         "step3-title": "お問い合わせ内容",
 
         // `contact.html` の翻訳を追加
-        // "contact-type":"個人/法人",
-        // "contact-topic":"相談種別",
         "contact-title": "お問い合わせ",
         "contact-name": "お名前",
         "contact-email": "メールアドレス",
@@ -813,14 +807,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (index < steps.length - 1) {
                 currentStep++;
                 showStep(currentStep);
-
-                if (currentStep === 2) { // Step 3 のフォームに事前入力
-                    const userType = document.querySelector('input[name="user-type"]:checked').value;
-                    const consultation = document.querySelector('input[name="consultation"]:checked').value;
-                    
-                    document.getElementById('contact-user-type').value = userType;
-                    document.getElementById('contact-consultation').value = consultation;
-                }
             }
         });
     });
