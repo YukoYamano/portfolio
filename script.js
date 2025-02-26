@@ -282,7 +282,7 @@ const translations = {
         "user-individual": "個人",
         "user-business": "法人",
         "step2-title": "何について相談したいですか？",
-        "consult-web": "Web開発",
+        "consult-web": "フロントエンド開発",
         "consult-test": "ソフトウェアテスト",
         "consult-other": "その他",
         "next": "次へ進む",

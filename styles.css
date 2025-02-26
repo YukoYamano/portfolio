@@ -943,7 +943,29 @@ footer {
     #faq h2 {
         font-size: 2rem;
     }
+
+    #step-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .step-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .step label {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .next-btn, .btn-submit {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
 }
+
 
 /* フェードインアニメーション */
 @keyframes fadeIn {
