@@ -408,7 +408,9 @@
     <!-- Step 3：問い合わせフォーム -->
     <div class="step step-3">
         <h3 data-key="step3-title">お問い合わせフォーム</h3>
-        <form id="contact-form">
+        <form id="contact-form" name="contact" method="POST" data-netlify="true">
+            <!--お問い合わせ用のフィールド-->
+            <input type="hidden" name="form-name" value="contact">
             <label>
         
             <label>
@@ -427,6 +429,11 @@
             <button class="btn-submit" type="submit" data-key="contact-submit">送信</button>
         </form>
     </div>
+
+    
+        
+        
+    
 </section>
 
     

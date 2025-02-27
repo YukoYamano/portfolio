@@ -205,9 +205,9 @@ const translations = {
         
          // `contact.html` の翻訳を追加
          "contact-title": "Contact Me",
-         "contact-name": "Your Name",
-         "contact-email": "Your Email",
-         "contact-message": "Your Message",
+         "contact-name": "*Your Name",
+         "contact-email": "*Your Email",
+         "contact-message": "*Your Message",
          "contact-submit": "Send Message",
          "contact-go-back-button": "Go Back",
         
@@ -309,9 +309,9 @@ const translations = {
 
         // `contact.html` の翻訳を追加
         "contact-title": "お問い合わせ",
-        "contact-name": "お名前",
-        "contact-email": "メールアドレス",
-        "contact-message": "メッセージ",
+        "contact-name": "*お名前",
+        "contact-email": "*メールアドレス",
+        "contact-message": "*メッセージ",
         "contact-submit": "送信",
         "contact-go-back-button": "戻る",
 
@@ -851,9 +851,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('Your message has been sent!');
+        alert('Thank you! Your message has been sent!');
         contactForm.reset();
         currentStep = 0;
         showStep(currentStep);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // ページリロードを防ぐ
+
+        const formData = new FormData(contactForm);
+
+        fetch("/", {
+            method: "POST",
+            body: formData
+        })
+        .then(() => {
+            alert("お問い合わせが送信されました！"); // 送信成功メッセージ
+            contactForm.reset();
+        })
+        .catch((error) => {
+            alert("送信に失敗しました。もう一度お試しください。");
+            console.error("送信エラー:", error);
+        });
     });
 });
