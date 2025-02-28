@@ -624,12 +624,14 @@ faqQuestions.forEach((btn) => {
     });
 });
 
+//Contact form
 document.addEventListener('DOMContentLoaded', function () {
     const steps = document.querySelectorAll('.step');
     const stepBtns = document.querySelectorAll('.step-btn');
     const nextBtns = document.querySelectorAll('.next-btn');
     const errorMessageDiv = document.querySelector('.error-message-contact');
-    const goToContactBtn = document.getElementById('go-to-contact');
+    const contactForm = document.getElementById('contact-form');
+    const userInfoField = document.getElementById('contact-user-info');
 
     let currentStep = 0;
     let currentLang = localStorage.getItem('site-language') || 'en';
@@ -642,6 +644,28 @@ document.addEventListener('DOMContentLoaded', function () {
         en: "Please select an option.",
         jp: "いずれかを選択してください。"
     };
+
+        // **日本語→英語の変換マッピング**
+        const translations = {
+            "個人": { en: "Individual", jp: "個人" },
+            "法人": { en: "Business", jp: "法人" },
+            "Web開発": { en: "Web Development", jp: "Web開発" },
+            "ソフトウェアテスト": { en: "Software Testing", jp: "ソフトウェアテスト" },
+            "その他": { en: "Other", jp: "その他" }
+        };
+    
+        function translateText(text) {
+            return translations[text] ? translations[text][currentLang] : text;
+        }
+
+        
+
+      // 初期状態で Step2 と Step3 のボタンを無効化
+      stepBtns[1].disabled = true;
+      stepBtns[2].disabled = true;
+      stepBtns[1].classList.add("disabled");
+      stepBtns[2].classList.add("disabled");
+
 
     function showStep(index) {
         steps.forEach(step => step.classList.remove('active'));
@@ -679,6 +703,20 @@ document.addEventListener('DOMContentLoaded', function () {
             if (index < steps.length - 1) {
                 currentStep++;
                 showStep(currentStep);
+
+                if (currentStep === 2) { // Step 3 に到達したらデータを入力
+                    stepBtns[1].disabled = false;
+                    stepBtns[1].classList.remove("disabled");
+                    const userType = document.querySelector('input[name="user-type"]:checked').value;
+                    const consultation = document.querySelector('input[name="consultation"]:checked').value;
+                   
+                    // **翻訳を適用**
+                    const translatedUserType = translateText(userType);
+                    const translatedConsultation = translateText(consultation);
+                    
+                    userInfoField.value = `【${translatedUserType}】 ${translatedConsultation}`;
+                }
+
             }
         });
     });
@@ -687,9 +725,9 @@ document.addEventListener('DOMContentLoaded', function () {
     stepBtns.forEach((btn, index) => {
         btn.addEventListener('click', function () {
             if (index === 1 && currentStep === 0) {
-                // Step2のボタンを押す前にStep1の選択をチェック
-                const radios = document.querySelectorAll('input[name="user-type"]');
-                const selected = Array.from(radios).some(radio => radio.checked);
+               // Step1 の選択チェック 初期状態
+                const selected = document.querySelector('input[name="user-type"]:checked');
+
 
                 if (!selected) {
                     updateErrorMessage();
@@ -699,8 +737,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
             }
+            if (index === 2) {
+                // Step1とStep2が完了していない場合、Step3に進めない
+                const userTypeSelected = document.querySelector('input[name="user-type"]:checked');
+                const consultationSelected = document.querySelector('input[name="consultation"]:checked');
+
+                if (!userTypeSelected || !consultationSelected) {
+                    updateErrorMessage();
+                    errorMessageDiv.textContent = errorMessages[currentLang];
+                    errorMessageDiv.style.color = "red";
+                    errorMessageDiv.style.display = "block";
+                    return;
+                }
+            }
+
             currentStep = index;
             showStep(currentStep);
+
         });
     });
 
@@ -709,40 +762,18 @@ document.addEventListener('DOMContentLoaded', function () {
         radio.addEventListener('change', function () {
             errorMessageDiv.textContent = "";
             errorMessageDiv.style.display = "none";
+
         });
     });
 
-    // **問い合わせフォームへ移動**
-    goToContactBtn.addEventListener('click', function () {
-        const radios = steps[currentStep].querySelectorAll('input[type="radio"]');
-        const selected = Array.from(radios).some(radio => radio.checked);
-
-        if (!selected) {
-            updateErrorMessage();
-            errorMessageDiv.textContent = errorMessages[currentLang];
-            errorMessageDiv.style.color = "red";
-            errorMessageDiv.style.display = "block"; // エラーメッセージを表示
-            return;
-        }
-
-        errorMessageDiv.textContent = ""; // エラーをクリア
-        errorMessageDiv.style.display = "none"; // エラーメッセージを非表示
-
-        // 選択された値を取得
-        const userTypeElement = document.querySelector('input[name="user-type"]:checked');
-        const consultationElement = document.querySelector('input[name="consultation"]:checked');
-
-        // `?` をつけるための条件
-        const params = [];
-        if (userTypeElement) params.push(`userType=${encodeURIComponent(userTypeElement.value)}`);
-        if (consultationElement) params.push(`consultation=${encodeURIComponent(consultationElement.value)}`);
-
-        // パラメータがある場合のみ `?` を追加
-        const queryString = params.length ? "?" + params.join("&") : "";
-
-        window.location.href = `contact.html${queryString}`;
+    document.querySelectorAll('input[name="consultation"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            errorMessageDiv.textContent = "";
+            errorMessageDiv.style.display = "none";
+        });
     });
 
+   
     // 言語切り替え時にエラーメッセージを変更
     document.getElementById('lang-jp').addEventListener('click', () => {
         localStorage.setItem('site-language', 'jp');
@@ -758,123 +789,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const steps = document.querySelectorAll('.step');
-    const stepBtns = document.querySelectorAll('.step-btn');
-    const nextBtns = document.querySelectorAll('.next-btn');
-    const errorMessageDiv = document.querySelector('.error-message-contact');
-    const contactForm = document.getElementById('contact-form');
-    const userInfoField = document.getElementById('contact-user-info');
-
-    let currentStep = 0;
-    let currentLang = localStorage.getItem('site-language') || 'en';
-
-    errorMessageDiv.style.display = "none";
-
-    const errorMessages = {
-        en: "Please select an option.",
-        jp: "いずれかを選択してください。"
+    // 言語ごとのsubmitメッセージ
+    const submitMessage = {
+        en: "Message sent!",
+        jp: "お問い合わせが送信されました！"
     };
 
-    function showStep(index) {
-        steps.forEach(step => step.classList.remove('active'));
-        stepBtns.forEach(btn => btn.classList.remove('active'));
-
-        steps[index].classList.add('active');
-        stepBtns[index].classList.add('active');
-     
-        errorMessageDiv.textContent = "";
-        errorMessageDiv.style.display = "none";
-    }
-
-    function updateErrorMessage() {
-        currentLang = localStorage.getItem('site-language') || 'en';
-    }
-
-    nextBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function () {
-            const radios = steps[index].querySelectorAll('input[type="radio"]');
-            const selected = Array.from(radios).some(radio => radio.checked);
-
-            if (!selected) {
-                updateErrorMessage();
-                errorMessageDiv.textContent = errorMessages[currentLang];
-                errorMessageDiv.style.color = "red";
-                errorMessageDiv.style.display = "block";
-                return;
-            }
-
-            errorMessageDiv.textContent = "";
-            errorMessageDiv.style.display = "none";
-
-            if (index < steps.length - 1) {
-                currentStep++;
-                showStep(currentStep);
-               
-                if (currentStep === 2) { // Step3 に到達したらデータを入力
-                    const userType = document.querySelector('input[name="user-type"]:checked').value;
-                    const consultation = document.querySelector('input[name="consultation"]:checked').value;
-                    
-                    userInfoField.value = `【${userType}】 ${consultation}`;
-                }
-            }
-        });
-    });
-
-    stepBtns.forEach((btn, index) => {
-        btn.addEventListener('click', function () {
-
-            console.log("index: " + index);
-            console.log("currentStep: " + currentStep);
-            if (index === 1 && currentStep === 0) {
-                // Step1 の選択チェック
-                const radios = document.querySelectorAll('input[name="user-type"]');
-                const selected = Array.from(radios).some(radio => radio.checked);
-
-                if (!selected) {
-                    updateErrorMessage();
-                    errorMessageDiv.textContent = errorMessages[currentLang];
-                    errorMessageDiv.style.color = "red";
-                    errorMessageDiv.style.display = "block";
-                    return;
-                }
-            }
-
-            if (index === 2 ) {
-                // Step1とStep2が完了していない場合、Step3に進めない
-                if (currentStep <1 ) {
-                    updateErrorMessage();
-                    errorMessageDiv.textContent = errorMessages[currentLang];
-                    errorMessageDiv.style.color = "red";
-                    errorMessageDiv.style.display = "block";
-                    return;
-                }else{
-                    currentStep = index;
-                    showStep(currentStep);
-                }
-            }
-
-            if (currentStep === 2) { // Step 3 に到達したらデータを入力
-                const userType = document.querySelector('input[name="user-type"]:checked').value;
-                const consultation = document.querySelector('input[name="consultation"]:checked').value;
-                
-                userInfoField.value = `【${userType}】 ${consultation}`;
-            }
-        });
-    });
-
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
-        radio.addEventListener('change', function () {
-            errorMessageDiv.textContent = "";
-            errorMessageDiv.style.display = "none";
-        });
-    });
 
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('お問い合わせが送信されました！');
+        alert(submitMessage[currentLang]);
         contactForm.reset();
         currentStep = 0;
         showStep(currentStep);
     });
-});
+
