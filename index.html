@@ -402,16 +402,21 @@
         <label><input type="radio" name="consultation" value="Web開発"> <span data-key="consult-web">Web開発</span></label>
         <label><input type="radio" name="consultation" value="ソフトウェアテスト"> <span data-key="consult-test">ソフトウェアテスト</span></label>
         <label><input type="radio" name="consultation" value="その他"> <span data-key="consult-other">その他</span></label>
-        <button class="next-btn" data-key="go-contact">問い合わせフォームへ</button>
+        <button class="next-btn" data-key="next">次へ進む</button>
     </div>
 
     <!-- Step 3：問い合わせフォーム -->
     <div class="step step-3">
         <h3 data-key="step3-title">お問い合わせフォーム</h3>
         <form id="contact-form" name="contact" method="POST" data-netlify="true">
-            <!--お問い合わせ用のフィールド-->
             <input type="hidden" name="form-name" value="contact">
+            
+            <!-- 自動入力欄 -->
             <label>
+                <span data-key="contact-user-info">あなたの情報</span>
+                <input type="text" id="contact-user-info" name="userinfo" readonly>
+            </label>
+
         
             <label>
                 <span data-key="contact-name">お名前</span>

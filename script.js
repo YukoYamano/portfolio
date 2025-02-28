@@ -199,11 +199,12 @@ const translations = {
         "consult-test": "Software Testing",
         "consult-other": "Other",
         "next": "Next",
-        "go-contact": "Proceed to Contact Form",
+       
         "step3-title": "Contact",
 
         
          // `contact.html` の翻訳を追加
+         "contact-user-info":"User information",
          "contact-title": "Contact Me",
          "contact-name": "*Your Name",
          "contact-email": "*Your Email",
@@ -304,11 +305,12 @@ const translations = {
         "consult-test": "ソフトウェアテスト",
         "consult-other": "その他",
         "next": "次へ進む",
-        "go-contact": "問い合わせフォームへ",
+      
         "step3-title": "お問い合わせ内容",
 
         // `contact.html` の翻訳を追加
         "contact-title": "お問い合わせ",
+        "contact-user-info":"あなたの情報",
         "contact-name": "*お名前",
         "contact-email": "*メールアドレス",
         "contact-message": "*メッセージ",
@@ -756,12 +758,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     const steps = document.querySelectorAll('.step');
     const stepBtns = document.querySelectorAll('.step-btn');
     const nextBtns = document.querySelectorAll('.next-btn');
     const errorMessageDiv = document.querySelector('.error-message-contact');
     const contactForm = document.getElementById('contact-form');
+    const userInfoField = document.getElementById('contact-user-info');
 
     let currentStep = 0;
     let currentLang = localStorage.getItem('site-language') || 'en';
@@ -779,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         steps[index].classList.add('active');
         stepBtns[index].classList.add('active');
-
+     
         errorMessageDiv.textContent = "";
         errorMessageDiv.style.display = "none";
     }
@@ -807,13 +810,24 @@ document.addEventListener('DOMContentLoaded', function () {
             if (index < steps.length - 1) {
                 currentStep++;
                 showStep(currentStep);
+               
+                if (currentStep === 2) { // Step3 に到達したらデータを入力
+                    const userType = document.querySelector('input[name="user-type"]:checked').value;
+                    const consultation = document.querySelector('input[name="consultation"]:checked').value;
+                    
+                    userInfoField.value = `【${userType}】 ${consultation}`;
+                }
             }
         });
     });
 
     stepBtns.forEach((btn, index) => {
         btn.addEventListener('click', function () {
+
+            console.log("index: " + index);
+            console.log("currentStep: " + currentStep);
             if (index === 1 && currentStep === 0) {
+                // Step1 の選択チェック
                 const radios = document.querySelectorAll('input[name="user-type"]');
                 const selected = Array.from(radios).some(radio => radio.checked);
 
@@ -825,20 +839,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
             }
-            if (index === 2 && currentStep < 2) {
-                const radios = document.querySelectorAll('input[name="consultation"]');
-                const selected = Array.from(radios).some(radio => radio.checked);
 
-                if (!selected) {
+            if (index === 2 ) {
+                // Step1とStep2が完了していない場合、Step3に進めない
+                if (currentStep <1 ) {
                     updateErrorMessage();
                     errorMessageDiv.textContent = errorMessages[currentLang];
                     errorMessageDiv.style.color = "red";
                     errorMessageDiv.style.display = "block";
                     return;
+                }else{
+                    currentStep = index;
+                    showStep(currentStep);
                 }
             }
-            currentStep = index;
-            showStep(currentStep);
+
+            if (currentStep === 2) { // Step 3 に到達したらデータを入力
+                const userType = document.querySelector('input[name="user-type"]:checked').value;
+                const consultation = document.querySelector('input[name="consultation"]:checked').value;
+                
+                userInfoField.value = `【${userType}】 ${consultation}`;
+            }
         });
     });
 
@@ -851,33 +872,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('Thank you! Your message has been sent!');
+        alert('お問い合わせが送信されました！');
         contactForm.reset();
         currentStep = 0;
         showStep(currentStep);
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
-
-    contactForm.addEventListener("submit", function (e) {
-        e.preventDefault(); // ページリロードを防ぐ
-
-        const formData = new FormData(contactForm);
-
-        fetch("/", {
-            method: "POST",
-            body: formData
-        })
-        .then(() => {
-            alert("お問い合わせが送信されました！"); // 送信成功メッセージ
-            contactForm.reset();
-        })
-        .catch((error) => {
-            alert("送信に失敗しました。もう一度お試しください。");
-            console.error("送信エラー:", error);
-        });
     });
 });
