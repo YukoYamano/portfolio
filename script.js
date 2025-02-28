@@ -116,8 +116,9 @@ const translations = {
         "nav-faq":"FAQ",
         "nav-contact": "Contact",
         "hero-title": "Hi, I'm Yuko Yamano",
-        "hero-subtitle": "Frontend Developer | Software Tester",
+        "hero-subtitle": "Developer | Software Tester",
         "view-work": "View My Work",
+        "contact":"ContactContact",
         "about-title": "About Me",
         "about-summary-tab": "Summary",
         "about-education-tab": "Education",
@@ -225,8 +226,9 @@ const translations = {
         "nav-faq":"よくある質問",
         "nav-contact": "お問い合わせ",
         "hero-title": "山野優子",
-        "hero-subtitle": "フロントエンドエンジニア | ソフトウェアテスター",
+        "hero-subtitle": "ディベロッパー | ソフトウェアテスター",
         "view-work": "作品を見る",
+        "contact":"お問い合わせ",
         "about-title": "自己紹介",
         "about-summary-tab": "サマリー",
         "about-education-tab": "学歴",
@@ -321,6 +323,57 @@ const translations = {
     }
 };
 
+
+
+// Updated translations for About Me section
+translations.en["hero-backgroundStory-title"] = "My Story";
+translations.jp["hero-backgroundStory-title"] = "私のストーリー";
+
+translations.en["hero-backgroundStory-contents"] = `
+    <p><strong>"If you had $10,000, what would you do?"</strong></p>
+    <p>One day, I came across this question on social media.</p>
+    <p>A trip? A new gadget? No—what is it that I truly want to do?</p>
+    <p>After thinking long and hard, I realized there was a dream I had buried deep inside.</p>
+    <p><strong>"I want to study game development."</strong></p>
+    <p>Going to college had been a lifelong dream of mine. As a mother of two, it might have seemed too big of a goal to pursue. But now that my children were older, maybe—just maybe—it was finally possible.</p>
+    <p>With that thought in mind, I took the leap and enrolled in college to study game development.</p>
+    <p>I started with the fundamentals of programming, and as I delved into <strong>game development</strong>, my passion expanded to <strong>application development</strong> and <strong>frontend development</strong>.</p>
+    <p>I fell in love with coding and the thrill of bringing ideas to life. Before I knew it, after graduating from college, I had already <strong>released three games and one app.</strong></p>
+    <p>What if I had received that $10,000 back then?</p>
+    <p>Sure, it might have covered part of my tuition.</p>
+    <p>But in the end, it wasn’t about the money—it was about making the decision and taking action.</p>
+    <p><strong>That decision changed my life.</strong></p>
+    <p>And so, I continue to create.</p>
+    <p><strong>Games, apps, frontend development—if you have something you want to build, let’s talk.</strong></p>
+    <p><strong>I’d love to help turn your ideas into reality.</strong></p>
+`;
+
+translations.jp["hero-backgroundStory-contents"] = `
+    <p><strong>「もし100万円あったら、何をしたい？」</strong></p>
+    <p>ある日、SNSでこの問いを見かけました。</p>
+    <p>旅行？新しい製品？いや、本当にやりたいことは何だろう？</p>
+    <p>考え抜いた末に出た答えは、ずっと心の奥にしまっていた夢でした。</p>
+    <p><strong>「カナダでゲーム開発を学びたい。」</strong></p>
+    <p>若い頃から憧れていた留学。二人の子供を抱える主婦の夢としては大きすぎるかもしれない。だけど、子供が大きくなった今なら、実現できるかもしれない。</p>
+    <p>そう思い立ち、カナダのカレッジに入学しました。</p>
+    <p>プログラミングの基礎から学び、<strong>ゲーム開発</strong>を皮切りに、<strong>アプリ開発</strong>、<strong>フロントエンド開発</strong>へと興味の幅が広がっていきました。</p>
+    <p>コードを書いてアイデアを形にする楽しさにハマり、気がつけばカレッジを卒業してから<strong>3つのゲームと1つのアプリをリリース。</strong></p>
+    <p>もし、あのとき100万円がもらえていたら？</p>
+    <p>たしかに、それで学費の一部を賄えたかもしれない。</p>
+    <p>でも結局、大事だったのはお金ではなく、「やる」と決めて行動したこと。</p>
+    <p><strong>その決断が、私の人生を変えました。</strong></p>
+    <p>だから、今も私は「作りたい」と思ったものを形にし続けています。</p>
+    <p><strong>ゲーム、アプリ、フロントエンド開発——もしあなたが「こんなものを作りたい」と思ったら、お気軽にご相談ください。</strong></p>
+    <p><strong>あなたのアイデアを形にするお手伝いをさせてください。</strong></p>
+`;
+
+// Function to update the About Me section when language is switched
+function updateAboutMeSection(lang) {
+    document.querySelector(".backGroundStory-section-title").innerHTML = translations[lang]["hero-backgroundStory-title"];
+    document.querySelector(".backGroundStory-section-contents").innerHTML = translations[lang]["hero-backgroundStory-contents"];
+}
+
+// Ensure the language switch updates the section dynamically
 function switchLanguage(lang) {
     const elements = document.querySelectorAll('[data-key]');
     elements.forEach(el => {
@@ -331,13 +384,16 @@ function switchLanguage(lang) {
             el.innerHTML = translations[lang][key];
         }
     });
+    updateAboutMeSection(lang); // Update About Me section dynamically
     localStorage.setItem('site-language', lang);
 }
 
+// Initialize language on page load
 window.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('site-language') || 'en';
     switchLanguage(savedLang);
 });
+
 
 langJP.addEventListener('click', () => switchLanguage('jp'));
 langEN.addEventListener('click', () => switchLanguage('en'));

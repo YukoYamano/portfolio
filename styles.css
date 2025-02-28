@@ -7,7 +7,7 @@
 
 /* 色の変数 */
 :root {
-    --primary-color: #156082;      /* ナビゲーション・フッター */
+    --primary-color: #204eb1;      /* ナビゲーション・フッター */
     --secondary-color: #01579b;    /* ホバー色など */
     --accent-color: #FFC107;       /* 強調色 */
     --background-color: #f9f9f9;   /* 背景色 */
@@ -39,14 +39,17 @@ body {
 .slideshow {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 150px;
+    overflow: hidden;
 }
 
 .slideshow img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -54,6 +57,32 @@ body {
 .slideshow img.active {
     opacity: 1;
 }
+
+/* Hero Text (Title & Subtitle) inside Slideshow */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Adjust text color for visibility */
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
 
 /* ナビゲーション */
 nav {
@@ -128,19 +157,24 @@ nav {
 
 /* セクション設定 */
 section {
-    padding: 100px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 /* ヒーローセクション */
 #hero {
-    background: linear-gradient(135deg, #6ccce4, #286be6); 
+    /* background: linear-gradient(135deg, #6ccce4, #286be6);  */
+    background: url(img/Lake.jpg);
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 30vh;
+    height: auto;
 }
 
 /* ヒーローカード */
@@ -149,12 +183,12 @@ section {
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
+    max-width: 900px;
     width: 90%;
     text-align: center;
 }
 
-.hero-card h2 {
+/* .hero-card h2 {
     font-size: 2rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
@@ -164,23 +198,65 @@ section {
     font-size: 1.2rem;
     color: var(--dark-gray);
     margin-bottom: 1.5rem;
+} */
+
+/* About Me Section */
+.backGroundStory-section-title {
+    font-size: 1.8rem;
+    color: var(--cta-color);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2%;
 }
+
+.backGroundStory-section-contents {
+    max-width: 90%;
+    padding-top: 2%;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--cta-color);
+    text-align: justify;
+}
+
+.backGroundStory-section-contents p {
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+
 
 /* ボタンとアイコン */
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 15px; /* ボタン間の余白 */
     flex-wrap: wrap;
 }
+
+.hero-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px; /* 統一された幅 */
+    height: 50px; /* 統一された高さ */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
 
 .cta-btn {
     background-color: var(--cta-color);
     color: var(--white);
-    padding: 10px 20px;
+    /* padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: bold; */
+    border: 2px solid #007bff;
 }
 
 .cta-btn:hover {
@@ -362,20 +438,7 @@ section {
     color: var(--text-color);
 }
 
-/* ====== 詳細ページリンク ====== */
-/* .project-link {
-    text-align: right;
-}
 
-.project-link a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.project-link a:hover {
-    color: var(--secondary-color);
-} */
 
 /* ====== カルーセルボタン（左右矢印） ====== */
 .carousel-btn {
@@ -545,13 +608,6 @@ section {
     height: 50px;
     margin-bottom: 10px;
 }
-
-/* ===== 無限ループの自動スクロールアニメーション ===== */
-/* @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-} */
-
 
 
 /* ツールチップ */
@@ -931,12 +987,33 @@ footer {
         padding: 1.5rem;
     }
 
-    .hero-card h2 {
+    /* .hero-card h2 {
         font-size: 1.8rem;
     }
 
     .hero-card p {
         font-size: 1rem;
+    } */
+
+    .hero-text {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* モバイルでは縦並び */
+        align-items: center;
+    }
+
+    .hero-buttons a {
+        width: 80%; /* スマホではボタンを広げる */
+        max-width: 300px;
+    }
+
+    .backGroundStory-section-contents {
+        padding: 0 15px;
     }
 
     .tab-menu {
@@ -1032,7 +1109,7 @@ footer {
     }
 
     #contact-form-section {
-        width: 90%;
+        width: 100%;
         padding: 15px;
     }
 

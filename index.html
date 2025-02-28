@@ -10,10 +10,14 @@
 
    <!-- ヘッダー -->
     <header class="slideshow">
-        <img src="img/image2.png" alt="スライド1" class="active">
-        <img src="img/image1.png" alt="スライド2">
+        <img src="img/sky1.jpg" alt="スライド1" class="active">
+        <img src="img/sky1_a.jpg" alt="スライド2">
+         <!-- Hero Title and Subtitle inside the Slideshow -->
+        <div class="hero-text">
+            <h2 id="hero-title" data-key="hero-title">Yuko Yamano</h2>
+            <p id="hero-subtitle" data-key="hero-subtitle">Frontend Developer | Software Tester</p>
+        </div>
     </header>
-         
                 <nav>
                     <div class="hamburger" id="hamburger">&#9776;</div>
                     <div class="logo-container">
@@ -38,16 +42,22 @@
                 <!-- ヒーローセクション -->
             <section id="hero">
                 <div class="hero-card">
-                    <h2 id="hero-title" data-key="hero-title">Yuko Yamano</h2>
-                    <p id="hero-subtitle" data-key="hero-subtitle">Frontend Developer | Software Tester</p>
+                    <!-- <h2 id="hero-title" data-key="hero-title">Yuko Yamano</h2>
+                    <p id="hero-subtitle" data-key="hero-subtitle">Frontend Developer | Software Tester</p> -->
+                   <!-- Background Story Section -->
+                    <div class="backGroundStory-section-title" data-key="hero-backgroundStory-title">About Me</div>
+                    <div class="backGroundStory-section-contents" data-key="hero-backgroundStory-contents"></div>
+
                     <div class="hero-buttons">
                         <a href="#projects" class="cta-btn" data-key="view-work">View My Work</a>
+                        
                         <a href="https://www.linkedin.com/in/yukoyamano" target="_blank" class="linkedin-btn">
-                            <img src="img/LinkedInlogo.png" alt="LinkedIn" width="30" height="30">
+                            <img src="img/LinkedInlogo.png" alt="LinkedIn" width="100" height="30">
                         </a>
                         <a href="https://github.com/YukoYamano" target="_blank" class="github-btn">
-                            <img src="img/gitlogo.png" alt="GitHub" width="30" height="30">
+                            <img src="img/gitlogo.png" alt="GitHub" width="100" height="30">
                         </a>
+                        <a href="#step-form" class="cta-btn" data-key="contact">Contact</a>
                     </div>
                 </div>
             </section>
