@@ -15,7 +15,7 @@ function startSlideshow() {
     setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showMainSlide(currentSlide);
-    }, 5000);
+    }, 10000);
 }
 
 window.addEventListener('DOMContentLoaded', startSlideshow);
@@ -120,12 +120,38 @@ const translations = {
         "view-work": "View My Work",
         "contact":"ContactContact",
         "about-title": "About Me",
-        "about-summary-tab": "Summary",
-        "about-education-tab": "Education",
-        "about-certificate-tab": "Certificate",
-        "about-summary-content": "This is the first line.<br>This is the second line.",
-        "about-education-content": "Graduated from XYZ University.<br>Major: Computer Science",
-        "about-certificate-content": "Certificate content",
+        "about-1-tab": "My Approach to Development",
+        "about-2-tab": "My Learning & Certifications",
+        "about-3-tab": "Career Journey",
+        
+        "about-1-content": "When developing software, I prioritize usability, code readability, and code reusability. To achieve this, I take the time to carefully design systems and ensure that projects, whether individual or team-based, are well-structured and planned. Of course, project timelines can be restrictive, and it is not always possible to allocate sufficient time for documentation.<br> In such cases, I leverage my knowledge of testing and incorporate Test-Driven Development (TDD) to improve efficiency and maintain high code quality.<br><br>Through my experience in the marketing research industry, I learned the importance of analyzing human behavior and making data-driven decisions.<br> I apply this experience to software development by improving software quality through data-driven approaches and creating solutions based on user behavior and needs.<br><br> I actively seek out common challenges people face and strive to provide effective solutions through software development.",
+        "about-2-content": "<ul>"
+            + "<li><strong>Software Engineering Technology - Game Programming Advanced Diploma (High Honours)</strong><br>"
+            + "Centennial College, Toronto, ON (Jan. 2021 - Apr. 2024)<br>"
+            + "• Developed a strong interest in frontend development and software testing while studying game development.<br>"
+            + "</li><br>"
+
+            + "<li><strong>The Complete 2024 Software Testing Bootcamp</strong><br>"
+            + "Nezam Academy via Udemy (May 2024 - Jul. 2024)<br>"
+            + "• Gained practical knowledge of software testing methodologies, test case creation, and automation testing.<br>"
+            + "</li><br>"
+
+            + "<li><strong>Game Design & Development Course (Online)</strong><br>"
+            + "Michigan State University via Coursera (May 2020 - Sep. 2020)<br>"
+            + "• Learned the fundamentals of game design and development.<br>"
+            + "</li><br>"
+
+            + "<li><strong>International Communication Associate Degree</strong><br>"
+            + "Aichi Sangyo University, Aichi, Japan (Apr. 2003 - Mar. 2005)<br>"
+            + "</li>"
+            + "</ul><br>"
+
+            + "<h4>Certifications</h4>"
+            + "<ul>"
+            + "<li><strong>ISTQB Certified Tester Foundation Level (ISTQB CTFL)</strong><br>"
+            + "Issued: June 2024 (Brightest)</li>"
+            + "</ul>",
+        "about-3-content": "Career Journey",
         "skills-title": "Skills",
         "projects-title": "Projects",
         
@@ -228,14 +254,43 @@ const translations = {
         "hero-title": "山野優子",
         "hero-subtitle": "ディベロッパー | ソフトウェアテスター",
         "view-work": "作品を見る",
+
         "contact":"お問い合わせ",
         "about-title": "自己紹介",
-        "about-summary-tab": "サマリー",
-        "about-education-tab": "学歴",
-        "about-certificate-tab": "資格",
-        "about-summary-content": "サマリーの内容です",
-        "about-education-content": "学歴の内容です",
-        "about-certificate-content": "資格の内容です",
+        "about-1-tab": "開発へのアプローチ",
+        "about-2-tab": "学びと資格",
+        "about-3-tab": "これまでの歩み",
+
+        "about-1-content": "開発において最も重視しているのは、ユーザーの使いやすさ、コードの読みやすさ、そしてコードの再利用のしやすさです。<br>そのために、時間をかけて設計を行い、個人開発でもグループ開発でも計画的に進めることを心がけています。<br><br>もちろん、プロジェクトには時間的な制約があり、必ずしもドキュメントに十分な時間を割けるわけではありません。<br>そうした中では、テストの知識を活かし、テスト駆動開発（TDD）を取り入れながら、開発の効率化と品質向上に努めています。<br>前職のマーケティングリサーチ会社での経験から、人々の行動や考えを分析し、データを活用して意思決定を行う重要性を学びました。<br>この経験を活かし、データを基にしたソフトウェアの品質向上、人々の行動やニーズに基づいた開発を心がけています。<br><br>多くの人が抱える課題に常にアンテナを張り、ソフトウェア開発を通じて解決策を提供することを目指しています。",
+
+        "about-2-content": "<ul>"
+            + "<li><strong>ソフトウェア工学技術 (ゲームプログラミング) 上級ディプロマ</strong><br>"
+            + "Centennial College, Toronto, ON (2021年1月 - 2024年4月)<br>"
+            + "• ゲーム開発を学ぶ中で、フロントエンド開発やソフトウェアテストにも関心を持つようになり、これらの技術を独自に学習。<br>"
+            + "</li><br>"
+
+            + "<li><strong>ソフトウェアテスト・ブートキャンプ</strong><br>"
+            + "Nezam Academy via Udemy (2024年5月 - 2024年7月)<br>"
+            + "• ソフトウェア品質向上のためのテスト手法を学習。実践的なテストケース作成や自動化に取り組む。<br>"
+            + "</li><br>"
+
+            + "<li><strong>ゲームデザイン & 開発コース (オンライン)</strong><br>"
+            + "Michigan State University via Coursera (2020年5月 - 2020年9月)<br>"
+            + "• ゲームの設計・開発の基礎を学ぶ。<br>"
+            + "</li><br>"
+
+            + "<li><strong>国際コミュニケーション準学士号</strong><br>"
+            + "愛知産業大学短期大学, 愛知, 日本 (2003年4月 - 2005年3月)<br>"
+            + "</li>"
+            + "</ul><br>"
+
+            + "<h4>資格</h4>"
+            + "<ul>"
+            + "<li><strong>ISTQB Certified Tester Foundation Level (ISTQB CTFL)</strong><br>"
+            + "取得年月: 2024年6月 (Brightest)</li>"
+            + "</ul>",
+
+        "about-3-content": "資格の内容です",
         "skills-title": "スキル",
         "projects-title": "プロジェクト",
        
@@ -334,36 +389,36 @@ translations.en["hero-backgroundStory-contents"] = `
     <p>One day, I came across this question on social media.</p>
     <p>A trip? A new gadget? No—what is it that I truly want to do?</p>
     <p>After thinking long and hard, I realized there was a dream I had buried deep inside.</p>
-    <p><strong>"I want to study game development."</strong></p>
+    <p>"I want to study game development."</p>
     <p>Going to college had been a lifelong dream of mine. As a mother of two, it might have seemed too big of a goal to pursue. But now that my children were older, maybe—just maybe—it was finally possible.</p>
     <p>With that thought in mind, I took the leap and enrolled in college to study game development.</p>
-    <p>I started with the fundamentals of programming, and as I delved into <strong>game development</strong>, my passion expanded to <strong>application development</strong> and <strong>frontend development</strong>.</p>
-    <p>I fell in love with coding and the thrill of bringing ideas to life. Before I knew it, after graduating from college, I had already <strong>released three games and one app.</strong></p>
+    <p>I started with the fundamentals of programming, and as I delved into game development, my passion expanded to application development and frontend development.</p>
+    <p>I fell in love with coding and the thrill of bringing ideas to life. Before I knew it, after graduating from college, I had already released three games and one app.</p>
     <p>What if I had received that $10,000 back then?</p>
     <p>Sure, it might have covered part of my tuition.</p>
     <p>But in the end, it wasn’t about the money—it was about making the decision and taking action.</p>
-    <p><strong>That decision changed my life.</strong></p>
+    <p>That decision changed my life.</p>
     <p>And so, I continue to create.</p>
-    <p><strong>Games, apps, frontend development—if you have something you want to build, let’s talk.</strong></p>
+    <p>Games, apps, frontend development—if you have something you want to build, let’s talk.</p>
     <p><strong>I’d love to help turn your ideas into reality.</strong></p>
 `;
 
 translations.jp["hero-backgroundStory-contents"] = `
-    <p><strong>「もし100万円あったら、何をしたい？」</strong></p>
+    <p><strong>「もし100万円あったら、何をしたい?」</strong></p>
     <p>ある日、SNSでこの問いを見かけました。</p>
     <p>旅行？新しい製品？いや、本当にやりたいことは何だろう？</p>
     <p>考え抜いた末に出た答えは、ずっと心の奥にしまっていた夢でした。</p>
-    <p><strong>「カナダでゲーム開発を学びたい。」</strong></p>
+    <p>「カナダでゲーム開発を学びたい。」</p>
     <p>若い頃から憧れていた留学。二人の子供を抱える主婦の夢としては大きすぎるかもしれない。だけど、子供が大きくなった今なら、実現できるかもしれない。</p>
     <p>そう思い立ち、カナダのカレッジに入学しました。</p>
-    <p>プログラミングの基礎から学び、<strong>ゲーム開発</strong>を皮切りに、<strong>アプリ開発</strong>、<strong>フロントエンド開発</strong>へと興味の幅が広がっていきました。</p>
-    <p>コードを書いてアイデアを形にする楽しさにハマり、気がつけばカレッジを卒業してから<strong>3つのゲームと1つのアプリをリリース。</strong></p>
-    <p>もし、あのとき100万円がもらえていたら？</p>
+    <p>プログラミングの基礎から学び、ゲーム開発を皮切りに、アプリ開発、フロントエンド開発へと興味の幅が広がっていきました。</p>
+    <p>コードを書いてアイデアを形にする楽しさにハマり、気がつけばカレッジを卒業してから3つのゲームと1つのアプリをリリース。</p>
+    <p>もし、あのとき100万円がもらえていたら?</p>
     <p>たしかに、それで学費の一部を賄えたかもしれない。</p>
     <p>でも結局、大事だったのはお金ではなく、「やる」と決めて行動したこと。</p>
-    <p><strong>その決断が、私の人生を変えました。</strong></p>
+    <p>その決断が、私の人生を変えました。</p>
     <p>だから、今も私は「作りたい」と思ったものを形にし続けています。</p>
-    <p><strong>ゲーム、アプリ、フロントエンド開発——もしあなたが「こんなものを作りたい」と思ったら、お気軽にご相談ください。</strong></p>
+    <p>ゲーム、アプリ、フロントエンド開発——もしあなたが「こんなものを作りたい」と思ったら、お気軽にご相談ください。</p>
     <p><strong>あなたのアイデアを形にするお手伝いをさせてください。</strong></p>
 `;
 

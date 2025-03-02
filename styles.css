@@ -317,6 +317,7 @@ section {
     max-width: 600px;
     margin: 0 auto;
     opacity: 0;
+    line-height: 1.6;
     transform: translateY(10px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -324,6 +325,7 @@ section {
 .tab-content.active {
     display: block;
     opacity: 1;
+    text-align: left;
     transform: translateY(0);
 }
 
