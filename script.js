@@ -128,7 +128,17 @@ const translations = {
         "about-2-content": "<ul>"
             + "<li><strong>Software Engineering Technology - Game Programming Advanced Diploma (High Honours)</strong><br>"
             + "Centennial College, Toronto, ON (Jan. 2021 - Apr. 2024)<br>"
-            + "• Developed a strong interest in frontend development and software testing while studying game development.<br>"
+            + "GPA: 4.3/4.5<br><br>"
+            + "<strong>Relevant Courses:</strong><br>"
+            + "<ul>"
+            + "<li>Programming I & II</li>"
+            + "<li>Web Interface Design</li>"
+            + "<li>Java Programming</li>"
+            + "<li>Web Application Development</li>"
+            + "<li>Unix/Linux Operating Systems</li>"
+            + "<li>Software Engrg Methodologies I & II</li>"
+            + "</ul><br>"
+            + "Gained hands-on experience in frontend development, game programming, and software testing, expanding my knowledge in web and application development."
             + "</li><br>"
 
             + "<li><strong>The Complete 2024 Software Testing Bootcamp</strong><br>"
@@ -151,14 +161,62 @@ const translations = {
             + "<li><strong>ISTQB Certified Tester Foundation Level (ISTQB CTFL)</strong><br>"
             + "Issued: June 2024 (Brightest)</li>"
             + "</ul>",
-        "about-3-content": "Career Journey",
-        "skills-title": "Skills",
+        "about-3-content": 
+       "<p>My journey into software development began with web development and content creation. As a self-employed web developer, I built and maintained websites while also creating engaging content for various clients.</p><br>"
+
+            + "<h4>Web Development & Content Creation</h4>"
+            + "<ul>"
+            + "<li><strong>Web Developer & Content Creator (Nov. 2015 - Dec. 2020)</strong><br>"
+            + "• Developed and maintained websites using HTML/CSS with WordPress.<br>"
+            + "• Created website content for 5 clients and contributed to the development of 8 websites.<br>"
+            + "• Edited existing content to enhance clarity and user engagement.</li><br>"
+            + "</ul>"
+
+            + "<p>Through these experiences, I developed a strong interest in web technologies, leading me to pursue formal education in Software Engineering Technology at Centennial College.</p><br>"
+
+            + "<h4>Technical & IT Support Experience</h4>"
+            + "<ul>"
+            + "<li><strong>System Support Officer Co-op (Tribunals Ontario, Aug. 2022 - Dec. 2022)</strong><br>"
+            + "• Provided technical support for in-court technologies, including digital recording devices and video conferencing systems.<br>"
+            + "• Assisted users in troubleshooting technical issues, improving system efficiency.<br>"
+            + "• Gained hands-on experience in IT infrastructure and system reliability.</li><br>"
+
+            + "<li><strong>IT Support Intern (SickKids Hospital, Feb. 2022 - Aug. 2022)</strong><br>"
+            + "• Managed an inventory of over 5,000 IT devices, ensuring data accuracy.<br>"
+            + "• Assisted in database management and asset tracking.<br>"
+            + "• Provided technical support and system maintenance.</li><br>"
+            + "</ul><br>"
+
+            + "<h4>Market Research & Analytical Skills</h4>"
+            + "<ul>"
+            + "<li><strong>Assistant Manager (Consumer Research Latin America, May. 2009 - Aug. 2012)</strong><br>"
+            + "• Designed brochures and templates for surveys and marketing purposes.<br>"
+            + "• Maintained and updated project management tools for real-time tracking.<br>"
+            + "• Developed data-driven presentations to share market research insights.<br>"
+            + "• Conducted accurate data entry, handling an average of 2,000 records per month.</li><br>"
+            + "</ul><br>"
+
+            + "<h4>Transitioning into Development & Testing</h4>"
+            + "<p>My background in web development and IT support naturally led me to explore software quality assurance and frontend development. At college, I deepened my knowledge of JavaScript, React, and testing methodologies.</p><br>"
+
+            + "<p>Through my studies and independent projects, I have developed and released several personal projects, You can find more details in the Projects section.</p><br>"
+
+            + "<h4>Looking Ahead</h4>"
+            + "<p>I am excited to apply my skills in software testing and frontend development, collaborating on projects that focus on usability, performance, and innovation.</p>",
+        
+       
         "projects-title": "Projects",
         
         "project1-title":"Navi Grade",
-        "project1-list1":"XX",
-        "project1-list2":"XX",
-        "project1-list3":"XXXX",
+        "project1-list1": "A web application that allows students to manage assignments, deadlines, and course information in one place. "
+        + "To boost student motivation, the app includes a badge system for completed tasks and AI-driven final grade prediction.",
+        "project1-list2":  "<strong>Main Features:</strong>"
+        + "<ul>"
+        + "<li>User authentication</li>"
+        + "<li>Data storage and management</li>"
+        + "<li>AI-powered grade prediction</li>"
+        + "</ul>",
+        "project1-list3": "<strong>Technology Stack:</strong> MERN Stack (MongoDB, Express.js, React, Node.js)",
 
         "project2-title":"Navi Grade",
         "project2-list1":"XX",
@@ -192,9 +250,12 @@ const translations = {
 
         "modal-title":"Title",
         "modal-duration":"Duration",
-        "modal-process":"Process",
+        "modal-purpose":"Purpose",
+        "modal-role":"Role",
+        "modal-challenges":"Challenges",
         "modal-link":"Detail",
-
+         
+        "skills-title": "Skills",
 
         "parallax-message":"Let's Connect!",
 
@@ -266,8 +327,17 @@ const translations = {
         "about-2-content": "<ul>"
             + "<li><strong>ソフトウェア工学技術 (ゲームプログラミング) 上級ディプロマ</strong><br>"
             + "Centennial College, Toronto, ON (2021年1月 - 2024年4月)<br>"
-            + "• ゲーム開発を学ぶ中で、フロントエンド開発やソフトウェアテストにも関心を持つようになり、これらの技術を独自に学習。<br>"
-            + "</li><br>"
+            + "GPA: 4.3/4.5<br><br>"
+            + "<strong>主な履修科目:</strong><br>"
+            + "<ul>"
+            + "<li>プログラミング I・II</li>"
+            + "<li>Web インターフェースデザイン</li>"
+            + "<li>Java プログラミング</li>"
+            + "<li>Web アプリケーション開発</li>"
+            + "<li>Unix/Linux オペレーションシステム</li>"
+            + "<li>ソフトウェアエンジニアリングメソドロジー I & II</li>"
+            + "</ul><br>"
+            + "フロントエンド開発、ゲームプログラミング、ソフトウェアテストの実践経験を積み、Webおよびアプリ開発の知識を広げた。<br><br>"
 
             + "<li><strong>ソフトウェアテスト・ブートキャンプ</strong><br>"
             + "Nezam Academy via Udemy (2024年5月 - 2024年7月)<br>"
@@ -290,14 +360,59 @@ const translations = {
             + "取得年月: 2024年6月 (Brightest)</li>"
             + "</ul>",
 
-        "about-3-content": "資格の内容です",
-        "skills-title": "スキル",
+        "about-3-content":  "<p>私のソフトウェア開発への道は、Web開発とコンテンツ制作から始まりました。フリーランスのWeb開発者として、複数のクライアントのWebサイトを制作・運用する機会をいただきました。</p><br>"
+
+        + "<h4>Web開発 & コンテンツ制作</h4>"
+        + "<ul>"
+        + "<li><strong>Web Developer & Content Creator (2015年11月 - 2020年12月)</strong><br>"
+        + "• HTML/CSSおよびWordPressを使用したWebサイトの開発・運営。<br>"
+        + "• 5つのクライアント向けにWebコンテンツを作成し、8つのWebサイト開発に携わる。<br>"
+        + "• 既存のコンテンツを編集し、ユーザーにとって魅力的なサイトを提供。</li><br>"
+        + "</ul>"
+
+        + "<p>この経験を通じてWeb技術に強い関心を持ち、より深く学ぶためにCentennial Collegeでソフトウェア工学技術を専攻しました。</p><br>"
+
+        + "<h4>技術 & ITサポートの経験</h4>"
+        + "<ul>"
+        + "<li><strong>システムサポートオフィサー Co-op (Tribunals Ontario, 2022年8月 - 2022年12月)</strong><br>"
+        + "• 法廷で使用されるデジタル録音デバイスやビデオ会議システムの技術サポート。<br>"
+        + "• ユーザーの技術的な問題を解決し、システムの安定性向上に貢献。<br>"
+        + "• ITインフラやシステムの信頼性向上に関する実践的な経験を積む。</li><br>"
+
+        + "<li><strong>ITサポートインターン (SickKids病院, 2022年2月 - 2022年8月)</strong><br>"
+        + "• 5,000台以上のIT機器を管理し、正確なデータベースを維持。<br>"
+        + "• データベース管理や資産追跡をサポート。<br>"
+        + "• 技術サポートやシステムメンテナンスに携わる。</li><br>"
+        + "</ul><br>"
+
+        + "<h4>マーケットリサーチ & 分析スキル</h4>"
+        + "<ul>"
+        + "<li><strong>アシスタントマネージャー (Consumer Research Latin America, 2009年5月 - 2012年8月)</strong><br>"
+        + "• 調査やマーケティング用のパンフレット・テンプレートを作成。<br>"
+        + "• プロジェクト管理ツールの更新・保守を担当。<br>"
+        + "• 市場調査の分析データを用いたプレゼンテーションを作成。<br>"
+        + "• 月平均2,000件の正確なデータ入力を実施。</li><br>"
+        + "</ul><br>"
+
+        + "<h4>開発 & ソフトウェアテストへの転向</h4>"
+        + "<p>Web開発とITサポートの経験を活かし、ソフトウェア品質保証やフロントエンド開発の分野に興味を持ちました。カレッジでは、JavaScript・React・ソフトウェアテストの手法を本格的に学びました。</p><br>"
+
+        + "<h4>今後の目標</h4>"
+        + "<p>現在、ソフトウェアテストとフロントエンド開発のスキルを活かし、ユーザーの使いやすさやパフォーマンスに焦点を当てたプロジェクトに携わることを目指しています。</p>"
+,
+       
         "projects-title": "プロジェクト",
        
-        "project1-title":"Navi Grade - ナビグレード",
-        "project1-list1":"学生用タイムマネジメントシステム",
-        "project1-list2":"MERNスタックで構成されたウェブアプリケーション",
-        "project1-list3":"ReactとReact Bootstrapを使用して構築",
+        "project1-title":"Navi Grade",
+        "project1-list1": "学生が課題、締切、コースの情報を一元管理できるWebアプリ。"
+                             + "課題を達成するたびにバッジシステムでモチベーションを向上させ、AIが最終成績を予測する機能を搭載。",
+        "project1-list2":  "<strong>主要機能:</strong>"
+                            + "<ul>"
+                            + "<li>ユーザー認証</li>"
+                            + "<li>データ保存・管理</li>"
+                            + "<li>AIを活用した成績予測</li>"
+                            + "</ul>",
+        "project1-list3":" <strong>使用技術:</strong> MERNスタック (MongoDB, Express.js, React, Node.js)",
 
         "project2-title":"Navi Grade",
         "project2-list1":"XX",
@@ -331,8 +446,12 @@ const translations = {
 
         "modal-title":"タイトル",
         "modal-duration":"制作期間",
-        "modal-process":"制作過程",
+        "modal-purpose":"目的",
+        "modal-role":"担当箇所",
+        "modal-challenges":"課題と乗り越えたこと",
         "modal-link":"詳細ページへ",
+
+        "skills-title": "スキル",
 
         "parallax-message":"お問い合わせ",
 
@@ -389,7 +508,7 @@ translations.en["hero-backgroundStory-contents"] = `
     <p>One day, I came across this question on social media.</p>
     <p>A trip? A new gadget? No—what is it that I truly want to do?</p>
     <p>After thinking long and hard, I realized there was a dream I had buried deep inside.</p>
-    <p>"I want to study game development."</p>
+    <p>"I want to study software development."</p>
     <p>Going to college had been a lifelong dream of mine. As a mother of two, it might have seemed too big of a goal to pursue. But now that my children were older, maybe—just maybe—it was finally possible.</p>
     <p>With that thought in mind, I took the leap and enrolled in college to study game development.</p>
     <p>I started with the fundamentals of programming, and as I delved into game development, my passion expanded to application development and frontend development.</p>
@@ -408,7 +527,7 @@ translations.jp["hero-backgroundStory-contents"] = `
     <p>ある日、SNSでこの問いを見かけました。</p>
     <p>旅行？新しい製品？いや、本当にやりたいことは何だろう？</p>
     <p>考え抜いた末に出た答えは、ずっと心の奥にしまっていた夢でした。</p>
-    <p>「カナダでゲーム開発を学びたい。」</p>
+    <p>「カナダでソフトウェア開発を学びたい。」</p>
     <p>若い頃から憧れていた留学。二人の子供を抱える主婦の夢としては大きすぎるかもしれない。だけど、子供が大きくなった今なら、実現できるかもしれない。</p>
     <p>そう思い立ち、カナダのカレッジに入学しました。</p>
     <p>プログラミングの基礎から学び、ゲーム開発を皮切りに、アプリ開発、フロントエンド開発へと興味の幅が広がっていきました。</p>
@@ -529,7 +648,9 @@ const modal = document.getElementById('project-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalImage = document.getElementById('modal-image');
 const modalDuration = document.getElementById('modal-duration').querySelector('span');
-const modalProcess = document.getElementById('modal-process').querySelector('span');
+const modalPurpose = document.getElementById('modal-purpose').querySelector('span');
+const modalRole = document.getElementById('modal-role').querySelector('span');
+const modalChallenge = document.getElementById('modal-challenges').querySelector('span');
 const modalDetailLink = document.getElementById('modal-detail-link');
 const closeBtn = document.querySelector('.close-btn');
 
@@ -539,14 +660,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -555,14 +680,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -571,14 +700,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -587,14 +720,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -603,14 +740,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -619,14 +760,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -635,14 +780,18 @@ const projectDetails = {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            process: "Requirement → Design → Development → Testing",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            process: "要件定義 → 設計 → 開発 → テスト",
+            purpose: "Requirement → Design → Development → Testing",
+            role: "Requirement → Design → Development → Testing",
+            challenge: "Requirement → Design → Development → Testing",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
@@ -660,7 +809,9 @@ function showModal(projectKey) {
     modalTitle.textContent = project.title;
     modalImage.src = project.image;
     modalDuration.textContent = project.duration;
-    modalProcess.textContent = project.process;
+    modalPurpose.textContent = project.purpose;
+    modalRole.textContent = project.role;
+    modalChallenge.textContent = project.challenge;
     modalDetailLink.setAttribute('href', project.link);
     modalDetailLink.setAttribute('target', '_blank');
     modal.style.display = 'block';

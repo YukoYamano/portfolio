@@ -71,18 +71,18 @@
 
             <!-- タブボタン -->
             <div class="tab-menu">
-                <button class="tab-btn active" data-tab="about1"  data-key="about-1-tab">About me</button>
-                <button class="tab-btn" data-tab="about2"  data-key="about-2-tab" >My Learning & Certifications</button>
+                <button class="tab-btn " data-tab="about1"  data-key="about-1-tab">About me</button>
+                <button class="tab-btn active" data-tab="about2"  data-key="about-2-tab" >My Learning & Certifications</button>
                 <button class="tab-btn" data-tab="about3"  data-key="about-3-tab" >Career Journey</button>
             </div>
 
             <!-- タブコンテンツ -->
-            <div class="tab-content active" id="about1" data-key="about-1-content">
+            <div class="tab-content " id="about1" data-key="about-1-content">
               
                 <p>This is the summary section. Introduce yourself here.</p>
             </div>
 
-            <div class="tab-content" id="about2" data-key="about-2-content">
+            <div class="tab-content active" id="about2" data-key="about-2-content">
                 
                 <p>Details about your education will appear here.</p>
             </div>
@@ -94,129 +94,137 @@
         </section>
 
             <!-- Projectsセクション -->
-        <section id="projects">
+        <section id="projects"> 
             <h2 data-key="projects-title">Projects</h2>
-            <div class="project-carousel">
-                <!-- 左の矢印ボタン -->
-                <button class="carousel-btn left-btn">&#9664;</button>
 
-                <!-- プロジェクトスライド -->
-                <div class="project-slides">
-                    <!-- プロジェクト1 -->
-                    <div class="project-card" data-project-id="project1">
-                        <div class="project-content">
-                            <img src="img/NaviGradeScr.png" alt="Project 1" class="project-image">
-                            <div class="project-details">
-                                <h3  data-key="project1-title">Navi Grade</h3>
-                                <ul>
-                                    <li data-key="project1-list1">学生用タイムマネジメントシステム</li>
-                                    <li data-key="project1-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                                    <li data-key="project1-list3">ReactとReact Bootstrapを使用して構築</li>
-                                </ul>
-                               
+            <div class="project-container ">
+
+                <div class="project-carousel">
+                    <!-- 左の矢印ボタン -->
+                    <button class="carousel-btn left-btn">&#9664;</button>
+    
+                    <!-- プロジェクトスライド -->
+                    <div class="project-slides">
+                        <!-- プロジェクト1 -->
+                        <div class="project-card" data-project-id="project1">
+                            <div class="project-content">
+                                <img src="img/NaviGradeScr.png" alt="NaviGrade" class="project-image">
+                                <div class="project-details">
+                                    <h3  data-key="project1-title">Navi Grade</h3>
+                                    <ul>
+                                        <li data-key="project1-list1">学生用タイムマネジメントシステム</li>
+                                        <li data-key="project1-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                        <li data-key="project1-list3">AIを使った成績予測</li>
+                                    </ul>
+                                    <a href="https://github.com/Avril-TFS/COMP313-002" class="github-link" target="_blank">GitHub</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- プロジェクト2 -->
-                    <div class="project-card" data-project-id="project2">
-                        <div class="project-content">
-                            <img src="img/project2.jpg" alt="Project 2" class="project-image">
-                            <div class="project-details">
-                                <h3 data-key="project2-title">箱根 湯本温泉</h3>
-                                <ul>
-                                    <li data-key="project2-list1">学生用タイムマネジメントシステム</li>
-                                    <li data-key="project2-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                                    <li data-key="project2-list3">ReactとReact Bootstrapを使用して構築</li>
-                                </ul>
-                             
+    
+                        <!-- プロジェクト2 -->
+                        <div class="project-card" data-project-id="project2">
+                            <div class="project-content">
+                                <img src="img/project2.jpg" alt="Project 2" class="project-image">
+                                <div class="project-details">
+                                    <h3 data-key="project2-title">2</h3>
+                                    <ul>
+                                        <li data-key="project2-list1">学生用タイムマネジメントシステム</li>
+                                        <li data-key="project2-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                        <li data-key="project2-list3">ReactとReact Bootstrapを使用して構築</li>
+                                    </ul>
+                                 
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- プロジェクト3 -->
-                    <div class="project-card" data-project-id="project3">
-                        <div class="project-content">
-                            <img src="img/project3.jpg" alt="Project 3" class="project-image">
-                            <div class="project-details">
-                                <h3 data-key="project3-title">沖縄 ビーチリゾート</h3>
-                                <ul>
-                                    <li data-key="project3-list1">学生用タイムマネジメントシステム</li>
-                                    <li data-key="project3-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                                    <li data-key="project3-list3">ReactとReact Bootstrapを使用して構築</li>
-                                </ul>
-                               
+    
+                        <!-- プロジェクト3 -->
+                        <div class="project-card" data-project-id="project3">
+                            <div class="project-content">
+                                <img src="img/project3.jpg" alt="Project 3" class="project-image">
+                                <div class="project-details">
+                                    <h3 data-key="project3-title">3</h3>
+                                    <ul>
+                                        <li data-key="project3-list1">学生用タイムマネジメントシステム</li>
+                                        <li data-key="project3-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                        <li data-key="project3-list3">ReactとReact Bootstrapを使用して構築</li>
+                                    </ul>
+                                   
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- プロジェクト4 -->
-                    <div class="project-card" data-project-id="project4">
-                        <div class="project-content">
-                            <img src="img/project4.jpg" alt="Project 4" class="project-image">
-                            <div class="project-details">
-                                <h3 data-key="project4-title">京都 町家ステイ</h3>
-                                <ul>
-                                    <li data-key="project4-list1">学生用タイムマネジメントシステム</li>
-                                    <li data-key="project4-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                                    <li data-key="project4-list3">ReactとReact Bootstrapを使用して構築</li>
-                                </ul>
-                               
+    
+                        <!-- プロジェクト4 -->
+                        <div class="project-card" data-project-id="project4">
+                            <div class="project-content">
+                                <img src="img/project4.jpg" alt="Project 4" class="project-image">
+                                <div class="project-details">
+                                    <h3 data-key="project4-title">4</h3>
+                                    <ul>
+                                        <li data-key="project4-list1">学生用タイムマネジメントシステム</li>
+                                        <li data-key="project4-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                        <li data-key="project4-list3">ReactとReact Bootstrapを使用して構築</li>
+                                    </ul>
+                                   
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-            <!-- プロジェクト5 -->
-            <div class="project-card" data-project-id="project5">
-                <div class="project-content">
-                    <img src="img/project5.jpg" alt="Project 5" class="project-image">
-                    <div class="project-details">
-                        <h3 data-key="project5-title">軽井沢 コテージ</h3>
-                        <ul>
-                            <li data-key="project5-list1">学生用タイムマネジメントシステム</li>
-                            <li data-key="project5-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                            <li data-key="project5-list3">ReactとReact Bootstrapを使用して構築</li>
-                        </ul>
-                      
+    
+                <!-- プロジェクト5 -->
+                <div class="project-card" data-project-id="project5">
+                    <div class="project-content">
+                        <img src="img/project5.jpg" alt="Project 5" class="project-image">
+                        <div class="project-details">
+                            <h3 data-key="project5-title">5</h3>
+                            <ul>
+                                <li data-key="project5-list1">学生用タイムマネジメントシステム</li>
+                                <li data-key="project5-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                <li data-key="project5-list3">ReactとReact Bootstrapを使用して構築</li>
+                            </ul>
+                          
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- プロジェクト6 -->
-            <div class="project-card" data-project-id="project6">
-                <div class="project-content">
-                    <img src="img/project6.jpg" alt="Project 6" class="project-image">
-                    <div class="project-details">
-                        <h3 data-key="project6-title">札幌 シティホテル</h3>
-                        <ul>
-                            <li data-key="project6-list1">学生用タイムマネジメントシステム</li>
-                            <li data-key="project6-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                            <li data-key="project6-list3">ReactとReact Bootstrapを使用して構築</li>
-                        </ul>
-                    
+    
+                <!-- プロジェクト6 -->
+                <div class="project-card" data-project-id="project6">
+                    <div class="project-content">
+                        <img src="img/project6.jpg" alt="Project 6" class="project-image">
+                        <div class="project-details">
+                            <h3 data-key="project6-title">6</h3>
+                            <ul>
+                                <li data-key="project6-list1">学生用タイムマネジメントシステム</li>
+                                <li data-key="project6-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                <li data-key="project6-list3">ReactとReact Bootstrapを使用して構築</li>
+                            </ul>
+                        
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- プロジェクト7 -->
-            <div class="project-card" data-project-id="project7">
-                <div class="project-content">
-                    <img src="img/project7.jpg" alt="Project 7" class="project-image">
-                    <div class="project-details">
-                        <h3 data-key="project7-title">那須 高原リゾート</h3>
-                        <ul>
-                            <li data-key="project7-list1">学生用タイムマネジメントシステム</li>
-                            <li data-key="project7-list2">MERNスタックで構成されたウェブアプリケーション</li>
-                            <li data-key="project7-list3">ReactとReact Bootstrapを使用して構築</li>
-                        </ul>
-                       
+    
+                <!-- プロジェクト7 -->
+                <!-- <div class="project-card" data-project-id="project7">
+                    <div class="project-content">
+                        <img src="img/project7.jpg" alt="Project 7" class="project-image">
+                        <div class="project-details">
+                            <h3 data-key="project7-title">那須 高原リゾート</h3>
+                            <ul>
+                                <li data-key="project7-list1">学生用タイムマネジメントシステム</li>
+                                <li data-key="project7-list2">MERNスタックで構成されたウェブアプリケーション</li>
+                                <li data-key="project7-list3">ReactとReact Bootstrapを使用して構築</li>
+                            </ul>
+                           
+                        </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-        </div>
-
-        <!-- 右の矢印ボタン -->
+    
+             <!-- 右の矢印ボタン -->
         <button class="carousel-btn right-btn">&#9654;</button>
+
+            </div>
+
+
+       
     </div>
 
     <!-- ドットインジケーター -->
@@ -238,7 +246,9 @@
             <img id="modal-image" src="" alt="Project Image" class="modal-image">
             <h2 id="modal-title" data-key="modal-title">Project Title</h2>
             <p id="modal-duration" data-key="modal-duration">Project Duration: <span></span></p>
-            <p id="modal-process" data-key="modal-process">Project Process: <span></span></p>
+            <p id="modal-purpose" data-key="modal-purpose">Project purpose: <span></span></p>
+            <p id="modal-role" data-key="modal-role">Project role: <span></span></p>
+            <p id="modal-challenges" data-key="modal-challenges">Project challenges: <span></span></p>
             <div class="modal-link">
                 <a href="#" id="modal-detail-link" target="_blank" data-key="modal-link">詳細ページへ ➔</a>
             </div>
