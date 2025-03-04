@@ -342,7 +342,7 @@ section {
 
 /* ====== プロジェクトセクション ====== */
 #projects {
-    padding: 50px 20px;
+    /* padding: 50px 20px; */
     background-color: var(--background-color);
     text-align: center;
 }
@@ -357,17 +357,20 @@ section {
 .project-carousel {
     position: relative;
     overflow: hidden;
-    max-width: 1000px; /* 3つのカードを表示 */
+    max-width: 50%; 
     margin: 0 auto;
 }
 
 /* ====== スライドコンテナ ====== */
 .project-slides {
-    display: flex;
+    /* display: flex;
     gap: 10px;
     transition: transform 0.5s ease-in-out;
+    will-change: transform;   */
+
+    display: flex;
+    transition: transform 0.5s ease-in-out;
     will-change: transform;
-   
 }
 
 /* ====== プロジェクトカード ====== */
@@ -376,12 +379,12 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; 
+    gap: 10px; 
 }
 
 
 .project-card {
-    flex: 1 1 calc(50% - 20px);
+    flex: 1 1 50%;
     display: flex;
     min-width: 500px; 
     margin: 0 10px;
@@ -517,10 +520,12 @@ section {
     padding: 20px;
     border-radius: 10px;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
     position: relative;
 }
+
+
 
 .close-btn {
     color: var(--dark-gray);
@@ -535,11 +540,45 @@ section {
     color: var(--primary-color);
 }
 
+
+/* 各セクションの見出し */
+.modal-section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* ===== テーブルのスタイル ===== */
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.modal-table th,
+.modal-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.modal-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    width: 30%;  /* ラベルの列を狭くする */
+}
+
 .modal-image {
     width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+
+    max-width: 40vh;
+    max-height:40vh;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
 }
 
 .modal-link a {
@@ -1036,18 +1075,20 @@ footer {
         text-align: center;
     }
 
+    /*Project 欄*/
     .project-content {
-        width: 300px;
+        width: 80%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         align-items: center;    /* 中央揃え */
         text-align: center;
-        padding: 15px;
+        padding: 5px;
     }
 
     .project-card {
-        flex: 1 1 100%; /* モバイルでは1列に */
-        max-width: 100%; /* 画面幅いっぱいに広げる */
+        flex: 1 80%; /* モバイルでは1列に */
+        max-width: 80%; /* 画面幅いっぱいに広げる */
     }
 
     /* .project-card img {
@@ -1063,8 +1104,7 @@ footer {
     }
 
     .project-details {
-       
-        width: 100%;
+        width: 80%;
         padding-left: 0;
         margin-top: 10px;
     }
@@ -1075,8 +1115,9 @@ footer {
     }
 
     .project-carousel {
-        max-width: 320px; 
+        max-width: 80%; 
     }
+
 
     .skills-carousel {
         overflow-x: auto;

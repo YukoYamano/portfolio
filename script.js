@@ -207,53 +207,79 @@ const translations = {
        
         "projects-title": "Projects",
         
-        "project1-title":"Navi Grade",
-        "project1-list1": "A web application that allows students to manage assignments, deadlines, and course information in one place. "
-        + "To boost student motivation, the app includes a badge system for completed tasks and AI-driven final grade prediction.",
-        "project1-list2":  "<strong>Main Features:</strong>"
-        + "<ul>"
-        + "<li>User authentication</li>"
-        + "<li>Data storage and management</li>"
-        + "<li>AI-powered grade prediction</li>"
-        + "</ul>",
-        "project1-list3": "<strong>Technology Stack:</strong> MERN Stack (MongoDB, Express.js, React, Node.js)",
+        "project1-title": "Navi Grade",
+        "project1-list1": "A web application that allows students to manage assignments, deadlines, and course information in one place."
+                            + "It features a badge system to boost motivation upon task completion and an AI-driven grade prediction system.",
+        "project1-list2": "<strong>Main Features:</strong>"
+                            + "<ul>"
+                            + "<li>User authentication</li>"
+                            + "<li>Data storage and management</li>"
+                            + "<li>AI-powered grade prediction</li>"
+                            + "</ul>",
+        "project1-list3": "<strong>Technologies Used:</strong> MERN Stack (MongoDB, Express.js, React, Node.js)",
 
-        "project2-title":"Navi Grade",
-        "project2-list1":"XX",
-        "project2-list2":"XX",
-        "project2-list3":"XXXX",
+        "project2-title": "Space Mathster",
+        "project2-list1": "A math learning game designed to help children enjoy learning multiplication tables while traveling through the solar system.",
+        "project2-list2": "<strong>Main Features:</strong>"
+                            + "<ul>"
+                            + "<li>Three difficulty levels for each multiplication set</li>"
+                            + "<li>Both multiplication and division concepts covered</li>"
+                            + "<li>Pause screen displays multiplication tables to support learning without interrupting gameplay</li>"
+                            + "</ul>",
+        "project2-list3": "<strong>Technologies Used:</strong> Unity, C#",
 
-        "project3-title":"Navi Grade",
-        "project3-list1":"XX",
-        "project3-list2":"XX",
-        "project3-list3":"XXXX",
+        "project3-title": "Space Mathster 2",
+        "project3-list1": "An updated version of 'Space Mathster' that enhances gameplay and helps children develop a deeper understanding of multiplication.",
+        "project3-list2": "<strong>Main Features:</strong>"
+                            + "<ul>"
+                            + "<li>Story mode where completing a multiplication set unlocks a new planet</li>"
+                            + "<li>Leaderboard system to compete with players worldwide</li>"
+                            + "<li>Optimized sound effects and visual effects for an improved gaming experience</li>"
+                            + "</ul>",
+        "project3-list3": "<strong>Technologies Used:</strong> Unity, C#", 
 
-        "project4-title":"Navi Grade",
-        "project4-list1":"XX",
-        "project4-list2":"XX",
-        "project4-list3":"XXXX",
+        "project4-title": "Nimbly",
+        "project4-list1": "A digital recreation of a childhood puzzle game, featuring original rules and a fresh strategic twist.",
+        "project4-list2": "<strong>Main Features:</strong>"
+                            + "<ul>"
+                            + "<li>Turn-based strategy puzzle gameplay</li>"
+                            + "<li>AI opponent mode</li>"
+                            + "<li>Simple yet deep game mechanics</li>"
+                            + "</ul>",
+        "project4-list3": "<strong>Technologies Used:</strong> Unity, C#", 
 
-        "project5-title":"Navi Grade",
-        "project5-list1":"XX",
-        "project5-list2":"XX",
-        "project5-list3":"XXXX",
+        "project5-title": "Reso365",
+        "project5-list1": "A habit-tracking app that allows users to set and achieve goals at any time, not just for New Year's resolutions.",
+        "project5-list2": "<strong>Main Features:</strong>"
+                            + "<ul>"
+                            + "<li>Flexible goal-setting, including habits and deadline-based objectives</li>"
+                            + "<li>Breaks down goals into smaller steps to support achievement</li>"
+                            + "<li>Data encryption to protect user privacy</li>"
+                            + "</ul>",
+        "project5-list3": "<strong>Technologies Used:</strong> Android Studio, Java, Firebase", 
 
-        "project6-title":"Navi Grade",
-        "project6-list1":"XX",
-        "project6-list2":"XX",
-        "project6-list3":"XXXX",
+        "project6-title": "Reso365 - Test Documents",
+        "project6-list1": "Software testing for 'Reso365' to enhance product quality, including over 100 test cases and bug reports.",
+        "project6-list2": "<strong>Scope:</strong>"
+                            + "<ul>"
+                            + "<li>Test plan creation</li>"
+                            + "<li>Test case design and execution for each feature</li>"
+                            + "<li>Identified and reported over 15 bugs, proposing fixes</li>"
+                            + "</ul>",
+        "project6-list3": "<strong>Tools Used:</strong> Google Docs, Trello, ScreenPal",
 
-        "project7-title":"Navi Grade",
-        "project7-list1":"XX",
-        "project7-list2":"XX",
-        "project7-list3":"XXXX",
 
+
+
+
+        
         "modal-title":"Title",
         "modal-duration":"Duration",
         "modal-purpose":"Purpose",
         "modal-role":"Role",
         "modal-challenges":"Challenges",
-        "modal-link":"Detail",
+
+         "modal-link":"Detail",
          
         "skills-title": "Skills",
 
@@ -405,7 +431,7 @@ const translations = {
        
         "project1-title":"Navi Grade",
         "project1-list1": "学生が課題、締切、コースの情報を一元管理できるWebアプリ。"
-                             + "課題を達成するたびにバッジシステムでモチベーションを向上させ、AIが最終成績を予測する機能を搭載。",
+                            + "課題を達成するたびにバッジシステムでモチベーションを向上させ、AIが最終成績を予測する機能を搭載。",
         "project1-list2":  "<strong>主要機能:</strong>"
                             + "<ul>"
                             + "<li>ユーザー認証</li>"
@@ -414,42 +440,64 @@ const translations = {
                             + "</ul>",
         "project1-list3":" <strong>使用技術:</strong> MERNスタック (MongoDB, Express.js, React, Node.js)",
 
-        "project2-title":"Navi Grade",
-        "project2-list1":"XX",
-        "project2-list2":"XX",
-        "project2-list3":"XXXX",
+        "project2-title": "Space Mathster",
+        "project2-list1": "九九を楽しみながら学べる算数学習ゲーム。プレイヤーは太陽系を旅しながら九九の9つの段を学べる。",
+        "project2-list2": " <strong>主要機能:</strong>" 
+                            + "<ul>"
+                            + "<li>1つの段につき、3つのレベルで構成</li>"
+                            + "<li>掛け算・割り算のふたつの概念を学べる</li>"
+                            + "<li>Pause画面で九九一覧を表示し、ゲームを中断せずに学習可能</li>"
+                            + "</ul>",
+        "project2-list3": "<strong>使用技術:</strong> Unity, C#",
 
-        "project3-title":"Navi Grade",
-        "project3-list1":"XX",
-        "project3-list2":"XX",
-        "project3-list3":"XXXX",
+        "project3-title": "Space Mathster 2",
+        "project3-list1": "『Space Mathster』のアップデート版。子供たちが九九をより深く学べるよう、進化したゲーム体験を提供。",
+        "project3-list2": "<strong>主要機能:</strong>"
+                            + "<ul>"
+                            + "<li>前作のシステムを改良し、1つの段をクリアしたら新しい惑星が解放されるストーリーモードを搭載</li>"
+                            + "<li>世界中のプレーヤーとスコアを競えるランキングシステムを搭載</li>"
+                            + "<li>効果音やエフェクトを最適化し、ゲーム体験を向上</li>"
+                            + "</ul>",
+        "project3-list3": "<strong>使用技術:</strong> Unity, C#", 
 
-        "project4-title":"Navi Grade",
-        "project4-list1":"XX",
-        "project4-list2":"XX",
-        "project4-list3":"XXXX",
+        "project4-title": "Nimbly",
+        "project4-list1": "子供の頃に遊んでいたパズルゲームを現代のデジタル環境で再現。<br>オリジナルのルールを持つパズルゲームを開発。",
+        "project4-list2": "<strong>主要機能:</strong>"
+                            + "<ul>"
+                            + "<li>ターン制の戦略パズルゲーム</li>"
+                            + "<li>AI対戦モードを搭載</li>"
+                            + "<li>シンプルながらも奥深いゲームデザイン</li>"
+                            + "</ul>",
+        "project4-list3": "<strong>使用技術:</strong> Unity, C#", 
 
-        "project5-title":"Navi Grade",
-        "project5-list1":"XX",
-        "project5-list2":"XX",
-        "project5-list3":"XXXX",
+        "project5-title": "Reso365",
+        "project5-list1": "新年の目標に限定せず、いつでも目標を設定し達成できる習慣管理アプリ。",
+        "project5-list2": "<strong>主要機能:</strong>"
+                            + "<ul>"
+                            + "<li>習慣化・期限付きなど自由度の高い目標設定が可能</li>"
+                            + "<li>設定した目標を細分化し、より達成しやすくサポート</li>"
+                            + "<li>データ暗号化によるプライバシー保護</li>"
+                            + "</ul>",
+        "project5-list3": "<strong>使用技術:</strong> Android Studio, Java, Firebase", 
 
-        "project6-title":"Navi Grade",
-        "project6-list1":"XX",
-        "project6-list2":"XX",
-        "project6-list3":"XXXX",
+        "project6-title": "Reso365 - Test Documents",
+        "project6-list1": "『Reso365』の品質向上のためのソフトウェアテストを実施。<br>100以上のテストケースを作成し、バグの特定と修正に貢献。",
+        "project6-list2": "<strong>内容:</strong>"
+                            + "<ul>"
+                            + "<li>テストプラン作成</li>"
+                            + "<li>機能ごとのテストケース設計と実施</li>"
+                            + "<li>15件以上のバグを報告し、改善策を提案</li>"
+                            + "</ul>",
+        "project6-list3": "<strong>使用ツール:</strong> Google Document, Trello, ScreenPal",
 
-        "project7-title":"Navi Grade",
-        "project7-list1":"XX",
-        "project7-list2":"XX",
-        "project7-list3":"XXXX",
 
         "modal-title":"タイトル",
         "modal-duration":"制作期間",
         "modal-purpose":"目的",
         "modal-role":"担当箇所",
         "modal-challenges":"課題と乗り越えたこと",
-        "modal-link":"詳細ページへ",
+
+         "modal-link":"詳細ページへ",
 
         "skills-title": "スキル",
 
@@ -574,13 +622,85 @@ langEN.addEventListener('click', () => switchLanguage('en'));
 
 
 
+// const projectSlides = document.querySelector('.project-slides');
+// const projectCards = document.querySelectorAll('.project-card');
+// const dots = document.querySelectorAll('.dot');
 
-const projectSlides = document.querySelector('.project-slides');
+// let currentIndex = 0;
+// ////const slideWidth = projectCards[0].offsetWidth + 20;
+
+// // クローンを作成して無限ループを実現
+// const firstClone = projectCards[0].cloneNode(true);
+// const lastClone = projectCards[projectCards.length - 1].cloneNode(true);
+
+// firstClone.classList.add('clone');
+// lastClone.classList.add('clone');
+
+// projectSlides.appendChild(firstClone);
+// projectSlides.insertBefore(lastClone, projectCards[0]);
+
+// let totalSlides = projectCards.length + 2; // クローンを含めた総数
+// projectSlides.style.transform = `translateX(-${slideWidth}px)`; // 最初のスライドに位置調整
+
+// function moveToSlide(index) {
+//     projectSlides.style.transition = 'transform 0.5s ease-in-out';
+//     projectSlides.style.transform = `translateX(-${(index + 1) * slideWidth}px)`;
+
+//     currentIndex = index;
+
+//     // ドットの更新
+//     dots.forEach(dot => dot.classList.remove('active'));
+//     dots[currentIndex % projectCards.length].classList.add('active');
+// }
+
+// // スライドの無限ループ制御
+// projectSlides.addEventListener('transitionend', () => {
+//     if (currentIndex === projectCards.length) {
+//         projectSlides.style.transition = 'none';
+//         projectSlides.style.transform = `translateX(-${slideWidth}px)`;
+//         currentIndex = 0;
+//     }
+
+//     if (currentIndex === -1) {
+//         projectSlides.style.transition = 'none';
+//         projectSlides.style.transform = `translateX(-${slideWidth * projectCards.length}px)`;
+//         currentIndex = projectCards.length - 1;
+//     }
+// });
+
+// // ボタン操作
+// document.querySelector('.right-btn').addEventListener('click', () => {
+//     if (currentIndex < projectCards.length) {
+//         moveToSlide(currentIndex + 1);
+//     }
+// });
+
+// document.querySelector('.left-btn').addEventListener('click', () => {
+//     moveToSlide(currentIndex - 1);
+// });
+
+// // ドットクリック
+// dots.forEach((dot, index) => {
+//     dot.addEventListener('click', () => {
+//         moveToSlide(index);
+//     });
+// });
+
+const projectSlides = document.querySelector('.project-slides'); 
 const projectCards = document.querySelectorAll('.project-card');
 const dots = document.querySelectorAll('.dot');
 
 let currentIndex = 0;
-const slideWidth = projectCards[0].offsetWidth + 20;
+
+// 動的にスライド幅を取得する関数
+function getSlideWidth() {
+  const style = window.getComputedStyle(projectCards[0]);
+  const marginLeft = parseFloat(style.marginLeft);
+  const marginRight = parseFloat(style.marginRight);
+  return projectCards[0].offsetWidth + marginLeft + marginRight;
+}
+
+let slideWidth = getSlideWidth();
 
 // クローンを作成して無限ループを実現
 const firstClone = projectCards[0].cloneNode(true);
@@ -592,52 +712,58 @@ lastClone.classList.add('clone');
 projectSlides.appendChild(firstClone);
 projectSlides.insertBefore(lastClone, projectCards[0]);
 
-let totalSlides = projectCards.length + 2; // クローンを含めた総数
-projectSlides.style.transform = `translateX(-${slideWidth}px)`; // 最初のスライドに位置調整
+// 初期位置に設定（クローン分のオフセットを考慮）
+projectSlides.style.transform = `translateX(-${slideWidth}px)`;
 
 function moveToSlide(index) {
-    projectSlides.style.transition = 'transform 0.5s ease-in-out';
-    projectSlides.style.transform = `translateX(-${(index + 1) * slideWidth}px)`;
+  slideWidth = getSlideWidth();
+  projectSlides.style.transition = 'transform 0.5s ease-in-out';
+  projectSlides.style.transform = `translateX(-${(index + 1) * slideWidth}px)`;
+  currentIndex = index;
 
-    currentIndex = index;
-
-    // ドットの更新
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex % projectCards.length].classList.add('active');
+  // ドットの更新
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex % projectCards.length].classList.add('active');
 }
 
 // スライドの無限ループ制御
 projectSlides.addEventListener('transitionend', () => {
-    if (currentIndex === projectCards.length) {
-        projectSlides.style.transition = 'none';
-        projectSlides.style.transform = `translateX(-${slideWidth}px)`;
-        currentIndex = 0;
-    }
-
-    if (currentIndex === -1) {
-        projectSlides.style.transition = 'none';
-        projectSlides.style.transform = `translateX(-${slideWidth * projectCards.length}px)`;
-        currentIndex = projectCards.length - 1;
-    }
+  if (currentIndex === projectCards.length) {
+    projectSlides.style.transition = 'none';
+    projectSlides.style.transform = `translateX(-${slideWidth}px)`;
+    currentIndex = 0;
+  }
+  if (currentIndex === -1) {
+    projectSlides.style.transition = 'none';
+    projectSlides.style.transform = `translateX(-${slideWidth * projectCards.length}px)`;
+    currentIndex = projectCards.length - 1;
+  }
 });
 
 // ボタン操作
 document.querySelector('.right-btn').addEventListener('click', () => {
-    if (currentIndex < projectCards.length) {
-        moveToSlide(currentIndex + 1);
-    }
+  if (currentIndex < projectCards.length) {
+    moveToSlide(currentIndex + 1);
+  }
 });
-
 document.querySelector('.left-btn').addEventListener('click', () => {
-    moveToSlide(currentIndex - 1);
+  moveToSlide(currentIndex - 1);
 });
 
 // ドットクリック
 dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        moveToSlide(index);
-    });
+  dot.addEventListener('click', () => {
+    moveToSlide(index);
+  });
 });
+
+// ウィンドウリサイズ時に幅を再計算
+window.addEventListener('resize', () => {
+  slideWidth = getSlideWidth();
+  projectSlides.style.transition = 'none';
+  projectSlides.style.transform = `translateX(-${(currentIndex + 1) * slideWidth}px)`;
+});
+
 
 // モーダル関連の要素取得
 
@@ -647,155 +773,137 @@ let currentProjectKey = null; // モーダルで表示中のプロジェクト�
 const modal = document.getElementById('project-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalImage = document.getElementById('modal-image');
-const modalDuration = document.getElementById('modal-duration').querySelector('span');
-const modalPurpose = document.getElementById('modal-purpose').querySelector('span');
-const modalRole = document.getElementById('modal-role').querySelector('span');
-const modalChallenge = document.getElementById('modal-challenges').querySelector('span');
+const modalDuration = document.getElementById('modal-duration')
+const modalPurpose = document.getElementById('modal-purpose')
+const modalRole = document.getElementById('modal-role')
+const modalChallenge = document.getElementById('modal-challenges')
 const modalDetailLink = document.getElementById('modal-detail-link');
 const closeBtn = document.querySelector('.close-btn');
 
 // プロジェクトデータ
+
 const projectDetails = {
     "project1": {
         en: {
             title: "Navi Grade",
             duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
+            purpose: "A time management system for students, using AI to predict grades and gamification to enhance motivation.",
+            role: "Frontend development, API integration, database design.",
+            challenge: "API Optimization: It was challenging to collaborate with the backend developer to ensure that only the necessary data was retrieved. Initially, the frontend filtered data, but to improve performance, we adjusted the API endpoints to fetch only the required information.",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         },
         jp: {
             title: "ナビグレード",
             duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
+            purpose: "学生が効率よく課題管理できるように、AIを活用して成績を予測し、ゲーミフィケーション要素でモチベーション向上を図ることを目的とした。",
+            role: "フロントエンド開発、API統合、データベース設計。",
+            challenge: "APIの最適化:APIから必要な情報のみ取り組めるようにバックエンド開発者との調整。フロントエンド側で必要な情報をフィルターしていたが、パフォーマンス向上のために、バックエンド側のAPIエンドポイントを修正して必要なものだけ取り組めるようにした",
             link: "https://github.com/Avril-TFS/COMP313-002",
             image: "img/NaviGradeScr.png"
         }
     },
     "project2": {
         en: {
-            title: "Navi Grade",
-            duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Space Mathster (1K+ downloads)",
+            duration: "6 months",
+            purpose: "To gamify multiplication table learning and create an enjoyable experience for children.",
+            role: "Solo development, responsible for design, coding, and release.",
+            challenge: "Adjusting the difficulty of answer choices: Initially, random choices were generated, but this led to unrealistic and incorrect answers. To improve learning efficiency, incorrect choices were generated based on patterns (multiples of n ±1 and the correct answer ±5) rather than pure randomness.",
+            link: "https://play.google.com/store/apps/details?id=com.FourCyGameStudio.SpaceMathster",
+            image: "img/SpaceMathster1a.png"
         },
         jp: {
-            title: "ナビグレード",
-            duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Space Mathster 1K+ ダウンロードを記録",
+            duration: "6ヶ月",
+            purpose: "子供たちが九九を楽しく学べるよう、ゲーム形式での学習環境を提供。",
+            role: "個人開発、デザインからリリースまで全て担当",
+            challenge: "選択肢の難易度の調整：完全にランダムに選択肢を生成せずに、規則性をもたすことで学習に効率的な問題で構成されたレベルにできた",
+            link: "https://play.google.com/store/apps/details?id=com.FourCyGameStudio.SpaceMathster",
+            image: "img/SpaceMathster1a.png"
         }
     },
     "project3": {
         en: {
-            title: "Navi Grade",
+            title: "Space Mathster 2",
             duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            purpose: "An enhanced version of Space Mathster, designed to deepen children's understanding of multiplication tables.",
+            role: "Solo development, responsible for design, coding, and release.",
+            challenge: "Balancing gameplay and learning difficulty: Focused on game sound effects and interactive elements. Fine-tuned the explosion sound effect when an answer was incorrect and the rewarding sound effect when a correct answer was chosen, adjusting the timing for an engaging experience.",
+            link: "https://play.google.com/store/apps/details?id=com.FourCYGameStudio.SpaceMath_Two_v2",
+            image: "img/SpaceMathster2a.png"
         },
         jp: {
-            title: "ナビグレード",
-            duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Space Mathster2",
+            duration: "3 months",
+            purpose: "スペースマスター１のアップデート版。子供達がより九九を深く学習できるようさらに進化したゲーム体験を提供。",
+            role:  "個人開発、デザインからリリースまで全て担当",
+            challenge: "ゲーム効果とレベルの調整:ゲームの効果音やエフェクト、ゲームの楽しさを司る仕組みに力を入れた。間違った時の爆発音や正解を選んだ時の効果音など、微調整しながら良いタイミングを探した",
+            link: "https://play.google.com/store/apps/details?id=com.FourCYGameStudio.SpaceMath_Two_v2",
+            image: "img/SpaceMathster2a.png"
         }
     },
     "project4": {
         en: {
-            title: "Navi Grade",
+            title: "Nimbly",
             duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            purpose: "Inspired by a childhood puzzle game that no longer existed online or as a board game, I wanted to recreate and play it again.",
+            role: "Solo development, responsible for design, coding, and release.",
+            challenge: "AI Movement: Since this was an original game, creating an AI opponent was challenging. I developed an algorithm that evaluates each move based on a score system to ensure optimal decision-making for the AI.",
+            link: "https://play.google.com/store/apps/details?id=com.FourcyGameStudio.Nimbly",
+            image: "img/Nimbly.png"
         },
         jp: {
-            title: "ナビグレード",
+            title: "Nimbly",
             duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            purpose: "幼少期に遊んでいたパズルゲームがネット上やボードゲーム市場にも存在せず、もう一度遊びたいと思ったことが開発のきっかけ。",
+            role: "個人開発、デザインからリリースまで全て担当",
+            challenge: "AIの動き:ほぼオリジナルのゲームなのでコンピューター対戦の際の敵の動きアルゴリズムを一から考えて設計する必要があった。一回ごとの動きをスコア換算して最適な動きになるようにアルゴリズムを組んだ",
+            link: "https://play.google.com/store/apps/details?id=com.FourcyGameStudio.Nimbly",
+            image: "img/Nimbly.png"
         }
     },
     "project5": {
         en: {
-            title: "Navi Grade",
-            duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Reso365",
+            duration: "4 months",
+            purpose: "Questioning the idea that New Year's resolutions can only be set at the start of the year, I created this app to allow users to start fresh any time.",
+            role: "Solo development, responsible for design, coding, and release.",
+            challenge: "Encrypting user data: While ensuring privacy protection via Firebase encryption, I encountered difficulties in properly decrypting the stored data. Debugging the decryption process and refining the encryption method was a major challenge.",
+            link: "#",
+            image: "img/Resso.png"
         },
         jp: {
-            title: "ナビグレード",
-            duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Reso365",
+            duration: "4ヶ月",
+            purpose: "新年の目標は新年にしか立てられないものなのか？毎日が新たなスタートでもよいのではないか、という考えから開発。",
+            role:"個人開発、デザインからリリースまで全て担当",
+            challenge: "ユーザーの情報の暗号化:ファイアベースにデータを暗号化してユーザーのプライバシー保護に務めるが、データの復号化がうまく行かないことが多く苦労した。",
+            link: "#",
+            image: "img/Resso.png"
         }
     },
     "project6": {
         en: {
-            title: "Navi Grade",
-            duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Reso365 - Test Documents",
+            duration: "4 months",
+            purpose: "To improve the quality of Reso365, I created and executed over 100 test cases and reported more than 15 bugs.",
+            role: "Responsible for all aspects of testing, including test planning, test documentation, and test case execution.",
+            challenge: "Traceability of test cases: It was difficult to track which test cases were linked to which bug reports. To address this, I categorized tasks by feature and used a visual representation to improve clarity.",
+            link: "https://trello.com/b/SlKfiJvO/resolutionapp",
+            image: "img/Testplan.png"
         },
         jp: {
-            title: "ナビグレード",
-            duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
-        }
-    },
-    "project7": {
-        en: {
-            title: "Navi Grade",
-            duration: "3 months",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
-        },
-        jp: {
-            title: "ナビグレード",
-            duration: "3ヶ月",
-            purpose: "Requirement → Design → Development → Testing",
-            role: "Requirement → Design → Development → Testing",
-            challenge: "Requirement → Design → Development → Testing",
-            link: "https://github.com/Avril-TFS/COMP313-002",
-            image: "img/NaviGradeScr.png"
+            title: "Reso365-TEST Documents",
+            duration:"4ヶ月",
+            purpose: "Reso365の品質向上のために100以上のテストケースを作成、実行。15以上のバグリポートの作成",
+            role:"テストプラン作成、テストドキュメント、テストケースなど全てのテスト工程を担当",
+            challenge: "テストケースのトレーサビリティ: 各テストケースとバグレポートの関連性を明確にするのに苦労した。機能ごとにカードを分類し、視覚的にわかりやすく整理。",
+            link: "https://trello.com/b/SlKfiJvO/resolutionapp",
+            image: "img/Testplan.png"
         }
     }
+   
 };
 
 // ===== モーダル表示処理 =====
