@@ -1087,8 +1087,12 @@ footer {
     }
 
     .project-card {
-        flex: 1 80%; /* モバイルでは1列に */
-        max-width: 80%; /* 画面幅いっぱいに広げる */
+        /* flex: 1 80%; /* モバイルでは1列に */
+        /* max-width: 80%;  */
+
+        /* カードの最小幅を縮める */
+        min-width: 300px; /* あるいは 80vw などでもOK */
+        margin: 0 5px;    /* 余白を少しだけにする */
     }
 
     /* .project-card img {
@@ -1098,9 +1102,13 @@ footer {
     } */
 
     .project-image {
-        max-height: 100%; /* カード内に収まるように調整 */
+        /* max-height: 100%; 
         max-width: 100%;
-        object-fit: contain; /* 画像の比率を維持して収める */
+        object-fit: contain;  */
+
+        width: 100%;
+        height: auto; 
+        object-fit: cover; 
     }
 
     .project-details {
