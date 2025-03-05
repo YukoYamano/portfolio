@@ -456,6 +456,7 @@ section {
 .carousel-btn {
     background-color: var(--primary-color);
     position: absolute;
+    
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--primary-color);
@@ -1109,6 +1110,11 @@ footer {
         width: 100%;
         height: auto; 
         object-fit: cover; 
+    }
+
+    .carousel-btn {
+        background-color: var(--primary-color);
+       opacity: 0.5;
     }
 
     .project-details {
