@@ -307,6 +307,8 @@ section {
     border-bottom: 3px solid var(--secondary-color);
 }
 
+
+
 /* タブコンテンツ */
 .tab-content {
     display: none;
@@ -329,6 +331,28 @@ section {
     text-align: left;
     transform: translateY(0);
 }
+
+
+.tab-arrows {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .tab-arrows button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 0 10px;
+    color: var(--primary-color); /* カラー変数などで調整 */
+    transition: color 0.3s;
+  }
+  
+  .tab-arrows button:hover {
+    color: var(--secondary-color);
+  }
+
 
 /* セクションの交互背景色 */
 #about, #skills {
@@ -456,7 +480,6 @@ section {
 .carousel-btn {
     background-color: var(--primary-color);
     position: absolute;
-    
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--primary-color);
@@ -602,30 +625,14 @@ section {
     text-align: center;
     padding: 50px 0;
     background-color: var(--background-color); 
-    max-width: 1000px; /* 最大幅 */
-    margin: 0 auto;    /* 中央寄せ */
+   
+    max-width: 1000px; 
+    margin: 0 auto;   
 }
 
 #skills h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-}
-
-/* ===== カルーセルのコンテナ ===== */
-.skills-carousel {
-    overflow: hidden; /* 通常時は隠す */
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-    margin: 0 auto;    
-    border-radius: 8px; 
-    /* border: 1px solid #ff0303;  */
-}
-
-/* ===== スキルのトラック ===== */
-.skills-track {
-    display: flex;
-    animation: scrollSkills 20s linear infinite;
 }
 
 /* ===== スキルカードのデザイン ===== */
@@ -660,14 +667,14 @@ section {
 
 
 /* ツールチップ */
-.skill-card .tooltip {
-    visibility: hidden;
+/* .skill-card .tooltip {
+    visibility: hidden; 
     position: absolute;
     bottom: 110%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
-    color: #fff;
+    color: #fff; 
     padding: 5px 8px;
     border-radius: 4px;
     font-size: 12px;
@@ -675,21 +682,47 @@ section {
 
     opacity: 0;
     transition: opacity 0.3s;
+} */
+
+
+.marquee {
+    /* overflow: hidden;
+    width: 80%;
+    background-color: #f8f8f8; 
+    padding: 10px 0;
+    position: relative; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
 }
 
-.skill-card:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
+.marquee-content {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: marquee-scroll 20s linear infinite;
 }
+
+.marquee-content li {
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+
 
 /* アニメーション */
-@keyframes scrollSkills {
-    0% {
-        transform: translateX(0);
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0%); /*文字列の初期位置（画面の左側に表示）*/
     }
-    100% {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(-50%); /*文字列が画面の半分まで移動する*/
     }
+
 }
 
 
@@ -982,7 +1015,30 @@ input[type="radio"] {
     display: none;
 }
 
-
+/*ページトップに戻る*/
+.scroll-top {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 50px;
+    height: 50px;
+    background-color:var(--cta-color); 
+    color:white;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ボタンホバー時のスタイル */
+  .scroll-top:hover {
+    background-color:var(--cta-hover);
+  }
+  
 
 /* フッター */
 footer {
@@ -1133,7 +1189,7 @@ footer {
     }
 
 
-    .skills-carousel {
+    /* .skills-carousel {
         overflow-x: auto;
         animation: none;
     }
@@ -1141,7 +1197,7 @@ footer {
     .skills-track {
         display: flex;
         animation: none;
-    }
+    } */
 
     .skill-card {
         flex: 0 0 auto;

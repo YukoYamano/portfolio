@@ -21,19 +21,81 @@ function startSlideshow() {
 window.addEventListener('DOMContentLoaded', startSlideshow);
 
 
+ // スクロール時に上に戻るボタンの挙動
+ window.addEventListener("scroll", function () {
+    console.log("called 1151");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (window.scrollY > 200) {
+        
+      scrollTopBtn.style.display = "flex"; 
+    } else {
+      scrollTopBtn.style.display = "none"; 
+    }
+  });
+  
+  
+  document.getElementById("scrollTopBtn").addEventListener("click", function () {
+    console.log("clicked 1162");
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
+  });
+  
+
+
 // ===================== タブ切り替え機能 =====================
+// const tabs = document.querySelectorAll('.tab-btn');
+// const contents = document.querySelectorAll('.tab-content');
+
+// tabs.forEach(tab => {
+//     tab.addEventListener('click', () => {
+//         tabs.forEach(t => t.classList.remove('active'));
+//         contents.forEach(c => c.classList.remove('active'));
+
+//         tab.classList.add('active');
+//         const targetContent = document.getElementById(tab.getAttribute('data-tab'));
+//         targetContent.classList.add('active');
+//     });
+// });
+
+// 既存のタブ切り替え処理はそのまま
 const tabs = document.querySelectorAll('.tab-btn');
 const contents = document.querySelectorAll('.tab-content');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+// タブの切り替え関数
+function switchTab(newIndex) {
+  // すべてのタブとコンテンツから active クラスを外す
+  tabs.forEach(tab => tab.classList.remove('active'));
+  contents.forEach(content => content.classList.remove('active'));
+  
+  // 新しいタブをアクティブにする
+  const newTab = tabs[newIndex];
+  newTab.classList.add('active');
+  const targetContent = document.getElementById(newTab.getAttribute('data-tab'));
+  targetContent.classList.add('active');
+}
 
-        tab.classList.add('active');
-        const targetContent = document.getElementById(tab.getAttribute('data-tab'));
-        targetContent.classList.add('active');
-    });
+// 既存のタブボタンへのクリックイベント
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    switchTab(index);
+  });
+});
+
+// 矢印ボタンのイベント設定
+const leftArrow = document.querySelector('.tab-arrows .left-arrow');
+const rightArrow = document.querySelector('.tab-arrows .right-arrow');
+
+leftArrow.addEventListener('click', () => {
+  let activeIndex = Array.from(tabs).findIndex(tab => tab.classList.contains('active'));
+  // 左に移動、先頭なら最後に戻る
+  activeIndex = activeIndex > 0 ? activeIndex - 1 : tabs.length - 1;
+  switchTab(activeIndex);
+});
+
+rightArrow.addEventListener('click', () => {
+  let activeIndex = Array.from(tabs).findIndex(tab => tab.classList.contains('active'));
+  // 右に移動、最後なら最初に戻る
+  activeIndex = activeIndex < tabs.length - 1 ? activeIndex + 1 : 0;
+  switchTab(activeIndex);
 });
 
 
@@ -60,13 +122,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===================== フッターの年数自動更新 =====================
 document.getElementById('year').textContent = new Date().getFullYear();
 
-
-// ===================== お問い合わせフォームのバリデーション =====================
-// document.getElementById('contact-form').addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     alert('Your message has been sent!');
-//     this.reset();
-// });
 
 
 // ===================== スクロールアニメーション =====================
@@ -116,7 +171,7 @@ const translations = {
         "nav-faq":"FAQ",
         "nav-contact": "Contact",
         "hero-title": "Hi, I'm Yuko Yamano",
-        "hero-subtitle": "Developer | Software Tester",
+        "hero-subtitle": "Developer | ISTQB Certified Software Tester",
         "view-work": "View My Work",
         "contact":"ContactContact",
         "about-title": "About Me",
@@ -339,7 +394,7 @@ const translations = {
         "nav-faq":"よくある質問",
         "nav-contact": "お問い合わせ",
         "hero-title": "山野優子",
-        "hero-subtitle": "ディベロッパー | ソフトウェアテスター",
+        "hero-subtitle": "ディベロッパー | ISTQB取得ソフトウェアテスター",
         "view-work": "作品を見る",
 
         "contact":"お問い合わせ",
@@ -883,38 +938,41 @@ window.addEventListener('click', (e) => {
 
 
 // ツールチップの表示制御
-const skillCards = document.querySelectorAll('.skill-card');
-const tooltip = document.getElementById('tooltip');
+// const skillCards = document.querySelectorAll('.skill-card');
+// const tooltip = document.getElementById('tooltip');
 
-skillCards.forEach(card => {
-    card.addEventListener('mouseover', (e) => {
-        const description = card.getAttribute('data-description');
-        tooltip.textContent = description;
-        tooltip.style.display = 'block';
-        positionTooltip(e);
-    });
+// skillCards.forEach(card => {
+//     card.addEventListener('mouseover', (e) => {
+//         const description = card.getAttribute('data-description');
+//         tooltip.textContent = description;
+//         tooltip.style.display = 'block';
+//         positionTooltip(e);
+//     });
 
-    card.addEventListener('mousemove', (e) => {
-        positionTooltip(e);
-    });
+//     card.addEventListener('mousemove', (e) => {
+//         positionTooltip(e);
+//     });
 
-    card.addEventListener('mouseout', () => {
-        tooltip.style.display = 'none';
-    });
-});
+//     card.addEventListener('mouseout', () => {
+//         tooltip.style.display = 'none';
+//     });
+// });
 
 
 // カルーセルの無限ループを作成
-document.addEventListener("DOMContentLoaded", () => {
-    const skillsTrack = document.querySelector('.skills-track');
-    const skillCards = document.querySelectorAll('.skill-card');
+// document.addEventListener("DOMContentLoaded", () => {
+//     const skillsTrack = document.querySelector('.skills-track');
+//     const skillCards = document.querySelectorAll('.skill-card');
 
-    // スキルカードを複製して末尾に追加
-    skillCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        skillsTrack.appendChild(clone);
-    });
-});
+//     // スキルカードを複製して末尾に追加
+//     skillCards.forEach(card => {
+//         const clone = card.cloneNode(true);
+//         skillsTrack.appendChild(clone);
+//     });
+// });
+
+
+
 
 
 // FAQのアコーディオン機能

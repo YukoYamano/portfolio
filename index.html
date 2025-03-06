@@ -78,20 +78,31 @@
             </div>
 
             <!-- タブコンテンツ -->
-            <div class="tab-content " id="about1" data-key="about-1-content">
-              
-                <p>This is the summary section. Introduce yourself here.</p>
-            </div>
-
-            <div class="tab-content active" id="about2" data-key="about-2-content">
+            <div class="tab-content-wrapper">
+                <div class="tab-content " id="about1" data-key="about-1-content">
                 
-                <p>Details about your education will appear here.</p>
-            </div>
+                    <p>This is the summary section. Introduce yourself here.</p>
+                </div>
 
-            <div class="tab-content" id="about3" data-key="about-3-content">
-                
-                <p>List your certificates and achievements here.</p>
+                <div class="tab-content active" id="about2" data-key="about-2-content">
+                    
+                    <p>Details about your education will appear here.</p>
+
+                 
+                </div>
+
+                <div class="tab-content" id="about3" data-key="about-3-content">
+                    
+                    <p>List your certificates and achievements here.</p>
+                </div>
+
+                <div class="tab-arrows">
+                    <button class="left-arrow">←</button>
+                    <button class="right-arrow">→</button>
+                </div>
+
             </div>
+          
         </section>
 
             <!-- Projectsセクション -->
@@ -268,70 +279,132 @@
 
 <section id="skills">
     <h2 data-key="skills-title">Skills</h2>
-    <div class="skills-carousel">
-        <div class="skills-track">
-          <!-- スキルカード: HTML -->
-        <div class="skill-card" data-description="Markup language for structuring web content (ウェブページの構造を作るマークアップ言語)">
-            <img src="img/html5.svg" alt="HTML Icon" class="skill-icon">
-            <p>HTML</p>
-            <span class="tooltip">HTML5 Markup</span>
-        </div>
+    <!-- <div class="skills-carousel"> -->
+        <!-- <div class="skills-track"> -->
 
-        <!-- スキルカード: CSS -->
-        <div class="skill-card" data-description="Stylesheet language for designing web pages (ウェブページのデザインを作成するスタイルシート言語)">
-            <img src="img/css.svg" alt="CSS Icon" class="skill-icon">
-            <p>CSS</p>
-            <span class="tooltip">CSS Styling</span>
-        </div>
+            <div class="marquee">
+                <ul class="marquee-content">
+                    <li>
+                            <div class="skill-card" >
+                                <img src="img/html5.svg" alt="HTML Icon" class="skill-icon">
+                                <p>HTML</p>
+                            </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/css.svg" alt="CSS Icon" class="skill-icon">
+                            <p>CSS</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/javascript.svg" alt="JavaScript Icon" class="skill-icon">
+                            <p>JavaScript</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/react.svg" alt="React Icon" class="skill-icon">
+                            <p>React.js</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/nodedotjs.svg" alt="Node.js Icon" class="skill-icon">
+                            <p>Node.js</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/java-svgrepo-com.svg" alt="Java Icon" class="skill-icon">
+                            <p>Java</p>
+                         
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card">
+                            <img src="img/c-logo-icon-28402.png" alt="Csharp Icon" class="skill-icon">
+                            <p>C#</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card">
+                            <img src="img/ISTQBlogo.jpg" alt="ISTQB Icon" class="skill-icon">
+                            <p>ISTQB Certified</p>
+                        </div>
+                    </li>
+                    <!--For Clone-->
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/html5.svg" alt="HTML Icon" class="skill-icon">
+                            <p>HTML</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/css.svg" alt="CSS Icon" class="skill-icon">
+                            <p>CSS</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/javascript.svg" alt="JavaScript Icon" class="skill-icon">
+                            <p>JavaScript</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/react.svg" alt="React Icon" class="skill-icon">
+                            <p>React.js</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/nodedotjs.svg" alt="Node.js Icon" class="skill-icon">
+                            <p>Node.js</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card" >
+                            <img src="img/java-svgrepo-com.svg" alt="Java Icon" class="skill-icon">
+                            <p>Java</p>
+                         
+                        </div>
+                    </li>
 
-        <!-- スキルカード: JavaScript -->
-        <div class="skill-card" data-description="Programming language for adding interactivity to web pages (ウェブページに動きをつけるプログラミング言語)">
-            <img src="img/javascript.svg" alt="JavaScript Icon" class="skill-icon">
-            <p>JavaScript</p>
-            <span class="tooltip">JavaScript Programming</span>
-        </div>
+                    <li>
+                        <div class="skill-card">
+                            <img src="img/c-logo-icon-28402.png" alt="Csharp Icon" class="skill-icon">
+                            <p>C#</p>
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="skill-card">
+                            <img src="img/ISTQBlogo.jpg" alt="ISTQB Icon" class="skill-icon">
+                            <p>ISTQB Certified</p>
+                        </div>
+                    </li>
+                    
 
-        <!-- スキルカード: React -->
-        <div class="skill-card" data-description="JavaScript library for building user interfaces (ユーザーインターフェースを作成するJavaScriptライブラリ)">
-            <img src="img/react.svg" alt="React Icon" class="skill-icon">
-            <p>React.js</p>
-            <span class="tooltip">React.js Library</span>
-        </div>
+                </ul>
+            </div>
 
-        <!-- スキルカード: Node.js -->
-        <div class="skill-card" data-description="JavaScript runtime for server-side development (サーバーサイド開発のためのJavaScript実行環境)">
-            <img src="img/nodedotjs.svg" alt="Node.js Icon" class="skill-icon">
-            <p>Node.js</p>
-            <span class="tooltip">Node.js Runtime</span>
-        </div>
-
-        <!-- スキルカード: Java -->
-        <div class="skill-card" data-description="General-purpose programming language used for backend and Android development (バックエンド開発やAndroid開発に使用される汎用プログラミング言語)">
-            <img src="img/java-svgrepo-com.svg" alt="Java Icon" class="skill-icon">
-            <p>Java</p>
-            <span class="tooltip">Java Programming</span>
-        </div>
-
-        <!-- スキルカード: C# -->
-        <div class="skill-card" data-description="Object-oriented programming language widely used for game and web application development (ゲーム開発やWebアプリケーション開発に広く使用されるオブジェクト指向プログラミング言語)">
-            <img src="img/c-logo-icon-28402.png" alt="Csharp Icon" class="skill-icon">
-            <p>C#</p>
-            <span class="tooltip">C# Programming</span>
-        </div>
-
-        <!-- スキルカード: Selenium -->
-        <div class="skill-card" data-description="Automation testing tool for web applications (Webアプリケーションのテストを自動化するツール)">
-            <img src="img/selenium.svg" alt="Selenium Icon" class="skill-icon">
-            <p>Selenium</p>
-            <span class="tooltip">Selenium Testing</span>
-        </div>
+    
 
 
-    <!-- ツールチップ表示用 -->
-    <div class="tooltip" id="tooltip"></div>
 </section>
 
 
+    <!-- ツールチップ表示用 -->
+    <!-- <div class="tooltip" id="tooltip"></div> -->
  
     <!-- parallax -->
     <section class="parallax-section">
@@ -473,6 +546,12 @@
         
     
 </section>
+
+
+    <!-- ページトップへ戻るボタン -->
+    <button id="scrollTopBtn" class="scroll-top">
+        ▲
+      </button>
 
     
     <!-- フッター -->
