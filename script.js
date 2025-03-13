@@ -341,18 +341,17 @@ const translations = {
         "parallax-message":"Let's Connect!",
 
 
-        "faq-title": "Frequently Asked Questions",
+       "faq-title": "Frequently Asked Questions",
         "faq-q1": "What services do you offer?",
-        "faq-a1": "I offer frontend development, website testing, and UX design improvements. I specialize in creating user-friendly and responsive websites.",
+        "faq-a1": "I provide frontend development, website testing, and mobile app development.",
         "faq-q2": "How long does it take to complete a project?",
-        "faq-a2": "Project timelines vary based on complexity. Small projects typically take 1-2 weeks, while larger projects may take up to a month.",
-        "faq-q3": "What are your rates?",
-        "faq-a3": "Rates depend on the project scope. I offer flexible pricing models, including hourly rates and fixed-price contracts.",
-        "faq-q4": "Can you update or improve an existing website?",
-        "faq-a4": "Absolutely! I can optimize existing websites for better performance, update content, or redesign layouts for a modern look.",
-        "faq-q5": "How can I get in touch for a project?",
-        "faq-a5": "You can reach out to me through the contact form below or connect with me via LinkedIn or GitHub for collaborations.",
-
+        "faq-a2": "It depends on the project size. Small projects take about 1-2 weeks, while larger ones may take up to a month.",
+        "faq-q3": "What is your pricing structure?",
+        "faq-a3": "I offer flexible pricing based on the project scale. Both hourly rates and fixed pricing options are available.",
+        "faq-q4": "Do you develop games?",
+        "faq-a4": "Absolutely! I specialize in game development using Unity.",
+        "faq-q5": "How can I request a project?",
+        "faq-a5": "Feel free to contact us via the form at the bottom of the page or reach out through LinkedIn or GitHub.",
 
 
         "step-title": "Contact",
@@ -561,13 +560,13 @@ const translations = {
 
         "faq-title": "よくある質問",
         "faq-q1": "どのようなサービスを提供していますか？",
-        "faq-a1": "フロントエンド開発、ウェブサイトのテスト、UX改善を提供しています。使いやすくレスポンシブなサイト制作を得意としています。",
+        "faq-a1": "フロントエンド開発、ウェブサイトのテスト、モバイルアプリ開発を提供しています。",
         "faq-q2": "プロジェクトの納期はどれくらいですか？",
         "faq-a2": "プロジェクトの規模により異なりますが、小規模なものは1〜2週間、大規模なものは最大1ヶ月かかる場合があります。",
         "faq-q3": "料金体系はどうなっていますか？",
         "faq-a3": "プロジェクトの規模に応じて柔軟に対応しています。時間単価や固定料金の両方に対応可能です。",
-        "faq-q4": "既存のウェブサイトの更新や改善はできますか？",
-        "faq-a4": "もちろん可能です！パフォーマンスの最適化、デザインの刷新、コンテンツの更新など幅広く対応いたします。",
+        "faq-q4": "ゲームの開発には対応していますか？",
+        "faq-a4": "もちろん可能です！Unity でのゲーム開発をお任せください",
         "faq-q5": "プロジェクトの依頼はどうすればいいですか？",
         "faq-a5": "下部のコンタクトフォームから、またはLinkedIn・GitHub経由でお気軽にご連絡ください。",
 
